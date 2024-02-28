@@ -6,15 +6,32 @@
 
 body{
     background-color: rgb(215, 213, 213);
+}
 
+
+#banner{
+    background-color: rgb(255, 255, 255);
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid black;
+    width: 100%;
+}
+
+h1{
+    font-size: 50px;
+    color: black;
+    text-align: center;
 }
 
 p{
-    font-size: 20px;
-    color: blue;
+    color: black
 }
 
 em strong { /* in this case we are selecting the strong tag inside the em tag. */
     color: red;
 }
 
+#mision{
+    font-size: 20px;
+    color: blue;
+}
