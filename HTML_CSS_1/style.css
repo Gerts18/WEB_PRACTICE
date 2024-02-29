@@ -1,10 +1,8 @@
 /* we use this file to style our html file. */
 /*a good practice is to use the same format as the html file. */
-body{
-    
+.main-title{
+    padding-left: 30px;
 }
-
-
 #banner{
     background-color: rgb(255, 255, 255);
     padding: 10px;
@@ -18,8 +16,7 @@ body{
     padding: 20px;
 }
 
-h1{
-    font-size: 50px;
+.titulo-centralizado{
     color: black;
     text-align: center;
 }
@@ -42,11 +39,6 @@ em strong { /* in this case we are selecting the strong tag inside the em tag. *
     padding: 30px;
 }
 
-h2{
-    font-size: 30px;
-    color: black;
-    text-align: center;
-}
 
 .item{
     font-style: italic;
