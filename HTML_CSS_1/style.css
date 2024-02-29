@@ -1,7 +1,7 @@
 /* we use this file to style our html file. */
 /*a good practice is to use the same format as the html file. */
 body{
-    background-color: rgb(215, 213, 213);
+    
 }
 
 
@@ -11,6 +11,11 @@ body{
     margin: 10px;
     border: 1px solid black;
     width: 100%;
+}
+
+.principal{
+    background-color: rgb(215, 213, 213); /* we can use rgb or hexadecimal values. */
+    padding: 20px;
 }
 
 h1{
@@ -32,6 +37,28 @@ em strong { /* in this case we are selecting the strong tag inside the em tag. *
     color: blue;
 }
 
+.diferenciales{
+    background-color: rgb(255, 255, 255);
+    padding: 30px;
+}
+
+h2{
+    font-size: 30px;
+    color: black;
+    text-align: center;
+}
+
 .item{
     font-style: italic;
+}
+
+ul{
+    display: inline-block; /* we use this to make the list appear in the same line. */
+    vertical-align: top; /* we use this to align the list to the top. */
+    width: 20%;
+    margin-right: 15%;
+}
+
+.img_dif{
+    width: 50%;
 }
