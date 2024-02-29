@@ -1,9 +1,5 @@
 /* we use this file to style our html file. */
 /*a good practice is to use the same format as the html file. */
-* {
-    text-align: center;
-}
-
 body{
     background-color: rgb(215, 213, 213);
 }
@@ -34,4 +30,8 @@ em strong { /* in this case we are selecting the strong tag inside the em tag. *
 #mision{
     font-size: 20px;
     color: blue;
+}
+
+.item{
+    font-style: italic;
 }
