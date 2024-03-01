@@ -1,0 +1,16 @@
+header{
+    background-color: #CCCCCC;
+}
+
+nav li {
+    display: inline-block;
+}
+
+nav a {
+    text-transform: uppercase; 
+    color: black;
+    font-weight:bold; /* This tag is used to define the font weight of the text. The font weight specifies how thick or thin characters in text should be displayed. The font weight can be set to a number between 100 to 900 or to one of the following values: normal, bold, bolder, lighter. */
+    font-size: 22px;
+    text-decoration: none; /* This tag is used to remove the underline from the text. */
+    margin: 0 0 0 20px;
+}
