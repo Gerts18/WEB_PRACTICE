@@ -1,5 +1,20 @@
+
 header{
     background-color: #CCCCCC;
+    padding: 20px 0;
+
+}
+
+.nav_panel{
+    width: 940px; 
+    position: relative;
+    margin: 0 auto; /* with auto property, the navegador will adjust the position depending on the pixels of the user's device */
+}
+
+nav {
+    position: absolute;
+    top: 110px;
+    right: 0;
 }
 
 nav li {
