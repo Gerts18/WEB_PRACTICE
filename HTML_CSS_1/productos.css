@@ -41,6 +41,10 @@ nav a {
     text-align: center;
     width: 30%; /* each element can only use 30% of the slot, it distrubuite the slot considering how much elements do we have */
     vertical-align: top;
+    margin: 0 1.5%;
+    padding: 30px 20px;
+    box-sizing: border-box;  /* The border of each item will be the limit of the defined slot */
+    
 }
 
 .product_list h2{
