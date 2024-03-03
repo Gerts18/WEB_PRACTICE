@@ -84,3 +84,9 @@ nav a:hover { /* This tag is used to define the color of the text when the mouse
     font-weight: bold;
     margin-top: 10px;
 }
+
+footer {
+    text-align: center;
+    background: url(img/bg.jpg);
+    padding: 40px;
+}	
