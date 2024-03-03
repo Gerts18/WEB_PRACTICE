@@ -30,6 +30,11 @@ nav a {
     margin: 0 0 0 20px;
 }
 
+nav a:hover { /* This tag is used to define the color of the text when the mouse is over the text. */
+    color: #c78c19; 
+    text-decoration: underline;
+}
+
 .product_list {
     width: 940px;
     margin: 0 auto;
@@ -47,10 +52,18 @@ nav a {
     /* border-color: black;
     border-width: 2px;
     border-style: solid; */
-    border: black 2px solid;
+    border: black 3px solid;
     border-radius: 10px; /* This tag is used to define the radius of the border. */
     /*Va en sentido del reloj, empezando por arriba a la izquierda */
     
+}
+
+.product_list li:hover {
+    border-color: #c78c19;
+}
+
+.product_list li:active { /* This tag is used to define the color of the border when the mouse clic the text. */
+    border-color: green;
 }
 
 .product_list h2{
@@ -58,7 +71,11 @@ nav a {
     font-weight: bolder;
 }
 
-.p-description {
+.product_list li:hover h2 {  
+    font-size: 33px; 
+}
+
+.p-description { 
     font-size: 18px;
 }
 
