@@ -44,7 +44,10 @@ nav a {
     margin: 0 1.5%;
     padding: 30px 20px;
     box-sizing: border-box;  /* The border of each item will be the limit of the defined slot */
-    
+    /* border-color: black;
+    border-width: 2px;
+    border-style: solid; */
+    border: black 2px solid;
 }
 
 .product_list h2{
