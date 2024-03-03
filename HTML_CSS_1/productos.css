@@ -48,6 +48,9 @@ nav a {
     border-width: 2px;
     border-style: solid; */
     border: black 2px solid;
+    border-radius: 10px; /* This tag is used to define the radius of the border. */
+    /*Va en sentido del reloj, empezando por arriba a la izquierda */
+    
 }
 
 .product_list h2{
