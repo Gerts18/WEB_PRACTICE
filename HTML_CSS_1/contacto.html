@@ -10,7 +10,7 @@
 <body>
     <header>
         <div class="nav_panel">
-            <h1><img src="img/logo.png" alt=""></h1>  <!-- This made the logo more visible  -->
+            <h1><img src="img/logo.png" alt="logo de la barberia Alura "></h1> 
             <nav>      
                 <ul>
                     <li><a href="index.html">Home</a></li> 
@@ -37,8 +37,8 @@
             <label for="mensaje">Comentarios</label>
             <textarea id="mensaje" cols="70" rows="10" class="input-p" required></textarea>
 
-            <div>
-                <p>¿Como le gustaria que lo contactemos?</p>
+            <fieldset>
+                <legend>¿Como le gustaria que lo contactemos?</legend>
 
                 <label for="email-radio">
                 <input type="radio" id="email-radio" value="email" name="contacto">
@@ -53,18 +53,17 @@
                 <label for="radio-wh">
                 <input type="radio" id="radio-wh" value="WhatsApp" name="contacto" checked>
                 WhatsApp
-                </label>
-                
-            </div>
+                </label>    
+            </fieldset>
 
-            <div>
-                <p>¿En cual horario prefiere ser atendido?</p>
+            <fieldset>
+                <legend>¿En cual horario prefiere ser atendido?</legend>
                 <select id="">
                     <option value="0">Mañana</option>
                     <option value="1">Tarde</option>
                     <option value="2">Noche</option>
                  </select>
-            </div>
+            </fieldset>
 
             <label for="">
             <input type="checkbox" class="checkbox" checked>¿Le gustaria recibir novedades de la Barberia?
@@ -75,7 +74,7 @@
     </main>
         
     <footer> 
-        <img src="img/logo-blanco.png" alt="">
+        <img src="img/logo-blanco.png" alt="Logo de la barberia Alura">
         <p class="copyright">&copy Barberia Alura - Todos los derechos reservados</p>
     </footer>
 
