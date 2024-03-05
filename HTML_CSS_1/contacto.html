@@ -24,16 +24,18 @@
     <main>
         <form action="">
             <label for="nombreapellido">Nombre y Apellido</label>
-            <input type="text" id="nombreapellido" class="input-p">
+            <input type="text" id="nombreapellido" class="input-p" required>
 
             <label for="correo">Correo Electronico</label>
-            <input type="email"  id="correo" class="input-p">
+            <input type="email"  id="correo" class="input-p" required
+            placeholder="email@dominio.com">
 
             <label for="telefono">Telefono</label>
-            <input type="tel" id="telefono" class="input-p">
+            <input type="tel" id="telefono" class="input-p" required
+            placeholder=" (XX) XXXX XXXX">
 
             <label for="mensaje">Comentarios</label>
-            <textarea id="mensaje" cols="70" rows="10" class="input-p"></textarea>
+            <textarea id="mensaje" cols="70" rows="10" class="input-p" required></textarea>
 
             <div>
                 <p>¿Como le gustaria que lo contactemos?</p>
