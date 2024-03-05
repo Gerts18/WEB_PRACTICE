@@ -1,0 +1,56 @@
+/* we use this file to style our html file. */
+/*a good practice is to use the same format as the html file. */
+.main-title{
+    padding-left: 30px;
+}
+#banner{
+    background-color: rgb(255, 255, 255);
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid black;
+    width: 100%;
+}
+
+.principal{
+    background-color: rgb(215, 213, 213); /* we can use rgb or hexadecimal values. */
+    padding: 20px;
+}
+
+.titulo-centralizado{
+    color: black;
+    text-align: center;
+}
+
+p{
+    color: black
+}
+
+#mision{
+    font-size: 20px;
+    color: blue;
+}
+
+em strong { /* in this case we are selecting the strong tag inside the em tag. */
+    color: red;
+}
+
+.diferenciales{
+    background-color: rgb(255, 255, 255);
+    padding: 30px;
+}
+
+
+.item{
+    font-style: italic;
+}
+
+ul{
+    display: inline-block; /* we use this to make the list appear in the same line. */
+    vertical-align: top; /* we use this to align the list to the top. */
+    width: 20%;
+    margin-right: 15%;
+}
+
+.img_dif{
+    width: 50%;
+}
