@@ -4,8 +4,18 @@ import './style.css'
 const Board = () => {
 
   const Square = ({value}) => {
+
+    const handleClick = () => {
+      console.log('Clic')
+    }
+
     return (
-      <button className='square'>{value}</button>
+      <button 
+        className='square'
+        onClick={handleClick}
+      >
+        {value}
+      </button>
     )
   }
 
