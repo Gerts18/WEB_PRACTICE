@@ -1,9 +1,10 @@
+import Board from "./components/Board/Board";
 
 function App() {
 
   return (
     <>
-      Hola
+      <Board/>
     </>
   )
 }
