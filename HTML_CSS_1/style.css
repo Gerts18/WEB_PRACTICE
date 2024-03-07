@@ -1,8 +1,6 @@
-
 header{
     background-color: #CCCCCC;
     padding: 20px 0;
-
 }
 
 .nav_panel{
@@ -157,4 +155,40 @@ td, th{
     border: 1px solid black;
     padding: 8px 15px;
 }
+
+/* CSS FOR THE MAIN PAGE*/
+
+.banner{
+    width: 100%;
+}
+
+.titulo-principal{
+    text-align: center;
+    font-size: 2em; /* two times the size of the original font size (usually the navegator gave it) */
+    margin: 0 0 1em;
+    clear: left;
+}
+
+.principal p {
+    margin: 0 0 1em;
+}
+
+.principal strong {
+    font-weight: bold;
+}
+
+.principal em {
+    font-style: oblique;
+}
+
+.utensilios{
+    width: 120px;   
+    float: left;
+    margin: 0 20px 20px 0 ;
+}
+
+.img_dif{
+    width: 60%;
+}
+
 
