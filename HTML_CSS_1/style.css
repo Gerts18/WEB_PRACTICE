@@ -223,6 +223,11 @@ td, th{
     line-height: 1.5;
 }
 
+.item:first-child { /* Also can be --> last-child and nth-child( here you put the number of the child you want to modify ) */
+    font-weight: bold;
+}
+
+
 .img_dif{
     width: 60%;
 }
