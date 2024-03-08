@@ -208,6 +208,21 @@ td, th{
     text-align: center;
 }
 
+.contenido-dif{
+    width: 640px;
+    margin: 0 auto;
+}
+
+.lista-dif{
+    width: 40%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.item {
+    line-height: 1.5;
+}
+
 .img_dif{
     width: 60%;
 }
