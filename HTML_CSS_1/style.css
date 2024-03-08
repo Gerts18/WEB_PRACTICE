@@ -183,6 +183,24 @@ td, th{
     clear: left;
 }
 
+/* 
+.titulo-principal:first-letter{
+    font-weight: bold;
+}
+
+.titulo-principal:before{
+    content: '[';
+}
+
+.titulo-principal:after{
+    content: ']';
+}
+
+p:first-line{
+    font-style: italic;
+} 
+*/
+
 .principal p {
     margin: 0 0 1em;
 }
@@ -236,6 +254,10 @@ td, th{
 
 .item {
     line-height: 1.5;
+}
+
+.item:before{
+    content: '★';
 }
 
 .item:first-child { /* Also can be --> last-child and nth-child( here you put the number of the child you want to modify ) */
