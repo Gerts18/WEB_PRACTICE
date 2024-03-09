@@ -282,3 +282,8 @@ p::first-line{
     margin: 1em auto;
 }
 
+@media screen and (max-width:480px) {
+    body{
+        background-color: red;
+    }
+}
