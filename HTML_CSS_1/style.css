@@ -282,3 +282,24 @@ p::first-line{
     margin: 1em auto;
 }
 
+@media screen and (max-width:480px) {
+    h1{
+        text-align: center;
+    }
+
+    nav{
+        position: static;
+    }
+    nav a {
+        font-size: 18px;
+    }
+
+    .nav_panel, .principal, .mapa-contenido, .contenido-dif, .video{
+        width: auto;
+    }
+
+    .lista-dif, .img_dif{
+        width: 100%;
+        margin: 20px 0;
+    }
+}
