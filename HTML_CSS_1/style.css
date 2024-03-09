@@ -294,6 +294,28 @@ p::first-line{
         font-size: 18px;
     }
 
+    .product_list{
+        width: auto;
+    }
+
+    .product_list li{
+        width: 100%;
+        display: block;
+        margin: 20px 0; 
+    }
+
+    .product_list img{
+        width: 200px;
+    }
+
+    .product_list h2 {
+        font-size: 23px;
+    }
+
+    .product_list li:hover h2 {
+        font-size: 25px;
+    }
+
     .nav_panel, .principal, .mapa-contenido, .contenido-dif, .video{
         width: auto;
     }
@@ -302,4 +324,19 @@ p::first-line{
         width: 100%;
         margin: 20px 0;
     }
+    
+    form {
+        margin: 20px 20px;
+    }
+
+    .enviar{
+        width: 50%;
+    }
+
+    select {
+       width: 100px;
+       height: 50px;
+       font-size: 18px;
+    }
+
 }
