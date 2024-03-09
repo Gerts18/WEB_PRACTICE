@@ -181,6 +181,7 @@ td, th{
     font-size: 2em; /* two times the size of the original font size (usually the navegator gave it) */
     margin: 0 0 1em;
     clear: left;
+    /* color: rgba(256, 0, 0, 0.3); */
 }
 
 /* 
@@ -267,6 +268,11 @@ p:first-line{
 
 .img_dif{
     width: 60%;
+}
+
+.img_dif:hover{
+    opacity: 30%;
+    transition: 400ms;
 }
 
 .video {
