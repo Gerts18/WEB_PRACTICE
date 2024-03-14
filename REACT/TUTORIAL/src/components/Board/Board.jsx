@@ -3,7 +3,7 @@ import Square from '../Square/Square'
 import '../style.css'
 
 
-const Board = () => {
+const Board = ({xIsNext, squares, onPlay}) => {
 
   function calculateWinner(squares){
     const lines = [
@@ -26,9 +26,9 @@ const Board = () => {
     return null;
   }
   
-  const [xIsNext, setXIsNext] = useState(true)
+  /* const [xIsNext, setXIsNext] = useState(true)
 
-  const [squares, setSquares] = useState(Array(9).fill(null));
+  const [squares, setSquares] = useState(Array(9).fill(null)); */
 
     const handleClick = (i) => {
       if (squares[i] || calculateWinner(squares)) {
@@ -47,8 +47,8 @@ const Board = () => {
       } else{
         nextSquares[i] = 'O';
       }
-      setSquares(nextSquares);
-      setXIsNext(!xIsNext);
+      
+      onPlay(nextSquares);
   }
 
   const winner = calculateWinner(squares);
