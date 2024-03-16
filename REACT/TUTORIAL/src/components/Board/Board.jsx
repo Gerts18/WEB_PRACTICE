@@ -9,24 +9,24 @@ const Board = ({xIsNext, squares, onPlay}) => {
 
   const [squares, setSquares] = useState(Array(9).fill(null)); */
 
-    const handleClick = (i) => {
-      if (squares[i] || calculateWinner(squares)) {
-        return;
-      }
+  const handleClick = (i) => {
+    if (squares[i] || calculateWinner(squares)) {
+      return;
+    }
 
-      if(squares[i]){
-        return;
-      }
+    if(squares[i]){
+      return;
+    }
 
-      const nextSquares = squares.slice();
+    const nextSquares = squares.slice();
 
-      if(xIsNext) {
-        nextSquares[i] = 'X';
-      } else{
-        nextSquares[i] = 'O';
-      }
-      
-      onPlay(nextSquares);
+    if(xIsNext) {
+      nextSquares[i] = 'X';
+    } else{
+      nextSquares[i] = 'O';
+    }
+    
+    onPlay(nextSquares);
   }
 
   function calculateWinner(squares){
