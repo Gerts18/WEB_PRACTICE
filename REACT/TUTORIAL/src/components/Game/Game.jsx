@@ -25,7 +25,7 @@ const Game = () => {
             description = 'Ir al inicio del juego'
         }
         return (
-            <li>
+            <li key={move}>
                 <button
                 onClick={() => jumpTo(move)}
                 >
