@@ -21,12 +21,19 @@ const Game = () => {
     }
 
     const moves = history.map((squares, move) => {
+        let isTitle = false;
         let description;
-        if (move > 0){
-            description = 'Ir al movimiento #' + move;
+        if (move > 0) {
+            if(move == currentMove){
+                description = 'Estas en el movimiento #'  + move;
+
+            } else {
+                description = 'Ir al movimiento #' + move;
+            }
         } else {
-            description = 'Ir al inicio del juego'
+            description = 'Ir al inicio del Juego'
         }
+        
         return (
             <li key={move}>
                 <button
