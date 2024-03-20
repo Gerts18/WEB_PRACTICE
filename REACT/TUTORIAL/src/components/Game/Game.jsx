@@ -26,23 +26,35 @@ const Game = () => {
         if (move > 0) {
             if(move == currentMove){
                 description = 'Estas en el movimiento #'  + move;
-
+                isTitle = true
             } else {
                 description = 'Ir al movimiento #' + move;
             }
         } else {
             description = 'Ir al inicio del Juego'
         }
-        
-        return (
-            <li key={move}>
-                <button
-                onClick={() => jumpTo(move)}
-                >
-                {description}
-                </button>
-            </li>
-        )
+
+        if(isTitle){
+            return (
+                <li key={move}>
+                    <p
+                    onClick={() => jumpTo(move)}
+                    >
+                    {description}
+                    </p>
+                </li>
+            )
+        }else {
+            return (
+                <li key={move}>
+                    <button
+                    onClick={() => jumpTo(move)}
+                    >
+                    {description}
+                    </button>
+                </li>
+            )
+        }
     }
     )
 
