@@ -25,6 +25,19 @@ main{
     margin: 0 auto;
 }
 
+#encriptado::placeholder {
+    color: #0A3871;
+    font-weight: bolder;
+    font-size: 15px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#no-encriptado::placeholder {
+    color: black;
+    font-size: 15px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
 .textos p {
     font-size: 10px;
     padding: 5px 5px;
