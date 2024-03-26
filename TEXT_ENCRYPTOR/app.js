@@ -27,14 +27,29 @@ function change(letra){
     }
 }
 
+function unchange(texto){
+    let palabras = ['enter', 'imes','ai', 'ober', 'ufat'];
+    let letras = ['e', 'i', 'a', 'o', 'u'];
+    let textoDesencriptado = texto;
+    for (let i = 0; i< palabras.length; i++){
+        let regex = new RegExp(palabras[i], 'g');
+        textoDesencriptado = textoDesencriptado.replace(regex, letras[i]);
+    }
+    return textoDesencriptado;
+}
+
 const encriptar = () => {
     let texto = document.getElementById('encriptado').value;
     let lista = Array.from(texto)
     lista.forEach(element => change(element));
     document.getElementById('no-encriptado').innerHTML = nuevoTexto;
     display()
+    nuevoTexto = '';
 }
 
 const desencriptar = () => {
     let texto = document.getElementById('no-encriptado').value;
+    nuevoTexto = unchange(texto);
+    document.getElementById('encriptado').innerHTML = nuevoTexto;
+    nuevoTexto = '';    
 }
