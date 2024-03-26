@@ -3,6 +3,13 @@ function display() {
 }
 
 let nuevoTexto = '';
+let textArea1;
+let textArea2;
+
+function inicializador(){
+     textArea1 = document.getElementById('encriptado');
+     textArea2 = document.getElementById('no-encriptado');
+}
 
 function change(letra){
     switch(letra){
@@ -39,17 +46,19 @@ function unchange(texto){
 }
 
 const encriptar = () => {
-    let texto = document.getElementById('encriptado').value;
-    let lista = Array.from(texto)
+    let texto = textArea1.value;
+    texto = texto.toLowerCase();
+    let lista = Array.from(texto);
     lista.forEach(element => change(element));
-    document.getElementById('no-encriptado').innerHTML = nuevoTexto;
+    textArea2.innerHTML = nuevoTexto;
     display()
     nuevoTexto = '';
 }
 
 const desencriptar = () => {
-    let texto = document.getElementById('no-encriptado').value;
+    let texto = textArea2.value;
+    texto = texto.toLowerCase();
     nuevoTexto = unchange(texto);
-    document.getElementById('encriptado').innerHTML = nuevoTexto;
+    textArea1.innerHTML = nuevoTexto;
     nuevoTexto = '';    
 }
