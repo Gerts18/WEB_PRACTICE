@@ -6,6 +6,7 @@
 
 body{
     background-color: rgba(243, 245, 252, 1);
+    font-family: 'Courier New', Courier, monospace
 }
 
 main{
@@ -22,6 +23,30 @@ main{
     padding: 10px 10px;
     background-color: white;
     margin: 0 auto;
+}
+
+#encriptado::placeholder {
+    color: #0A3871;
+    font-weight: bolder;
+    font-size: 15px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.imagen {
+    width: 200px;
+    pointer-events: none; 
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    top: 40%;
+    left: 63%;
+    transform: translate(-50%, -50%);
+}
+
+#no-encriptado::placeholder {
+    color: black;
+    font-size: 15px;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 .textos p {

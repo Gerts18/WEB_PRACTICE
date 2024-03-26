@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script src="app.js"></script>
     <title>Encriptador</title>
 </head>
 <body>
@@ -12,18 +13,18 @@
         <section class="content">
 
             <div class="textos">
-                <textarea id="no-encrypted" cols="50" rows="30">
-                    Ingresa tu texto aquí
-                </textarea>
-                <textarea id="encypted" cols="20" rows="30">
-                    Texto encriptado aquí
-                </textarea>
-                <p>&#33; Solo letras minusculas y sin acentos</p>
+                <textarea id="encriptado" cols="50" rows="30" 
+                placeholder="Ingrese el Texto aqui"></textarea>
+                <img src="Muñeco.png" class="imagen" id="img">
+                <textarea id="no-encriptado" cols="25" rows="30" 
+                placeholder="Ingresa el texto que deseas encriptar o desencriptar"
+                onclick="display()"></textarea>
+                <p>&#33; Solo letras minúsculas y sin acentos</p>
             </div>
             
             <div class="botones">
-                <button class="boton-enc">Encriptar</button>
-                <button class="boton-desenc">Desencriptar</button>
+                <button onclick="encriptar()" class="boton-enc">Encriptar</button>
+                <button onclick="desencriptar()" class="boton-desenc">Desencriptar</button>
             </div>
 
         </section>
