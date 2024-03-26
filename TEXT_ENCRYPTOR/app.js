@@ -50,15 +50,17 @@ const encriptar = () => {
     texto = texto.toLowerCase();
     let lista = Array.from(texto);
     lista.forEach(element => change(element));
-    textArea2.innerHTML = nuevoTexto;
+    textArea2.value = nuevoTexto;
     display()
     nuevoTexto = '';
+    textArea1.value = '';
 }
 
 const desencriptar = () => {
     let texto = textArea2.value;
     texto = texto.toLowerCase();
     nuevoTexto = unchange(texto);
-    textArea1.innerHTML = nuevoTexto;
-    nuevoTexto = '';    
+    textArea1.value = nuevoTexto;
+    nuevoTexto = '';   
+    textArea2.value = ''; 
 }
