@@ -32,6 +32,17 @@ main{
     font-family: 'Courier New', Courier, monospace;
 }
 
+.imagen {
+    width: 200px;
+    pointer-events: none; 
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    top: 40%;
+    left: 63%;
+    transform: translate(-50%, -50%);
+}
+
 #no-encriptado::placeholder {
     color: black;
     font-size: 15px;
