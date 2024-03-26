@@ -1,3 +1,3 @@
 function display() {
-    document.getElementById("encriptado").style.display = "none";
+    document.getElementById("img").style.display = "none";
 }
