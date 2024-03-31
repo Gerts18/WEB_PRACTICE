@@ -9,3 +9,9 @@ def message(request, username): # This will help me to obtain info if the client
 
 def about(request):
     return HttpResponse('About')
+
+def projects(request):
+    return HttpResponse('Project')
+
+def tasks(request):
+    return HttpResponse('task')
