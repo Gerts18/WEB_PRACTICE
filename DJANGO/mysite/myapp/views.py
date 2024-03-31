@@ -7,16 +7,15 @@ def index(request):
     return render(request, 'index.html')
 
 def about(request):
-    return HttpResponse('About')
+    return render(request, 'about.html')
 
 def message(request, username): # This will help me to obtain info if the client visits this view or ejecutes the function
     return HttpResponse(f'<h1> Hello World {username} </h1>')
 
 def projects(request):
     list_projects = list(Project.objects.values())
-    return JsonResponse(list_projects, safe=False)
+    return render(request, 'projects.html')
 
-def tasks(request, id):
+def tasks(request):
     #t = Task.objects.get(id=id)
-    task = get_object_or_404(Task, id=id)
-    return HttpResponse(f'Task: {task.title}')
+    return render(request, 'tasks.html')
