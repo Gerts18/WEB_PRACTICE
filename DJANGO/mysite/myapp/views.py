@@ -16,8 +16,11 @@ def message(request, username): # This will help me to obtain info if the client
     return HttpResponse(f'<h1> Hello World {username} </h1>')
 
 def projects(request):
-    list_projects = list(Project.objects.values())
-    return render(request, 'projects.html')
+    #list_projects = list(Project.objects.values())
+    projects = Project.objects.all()
+    return render(request, 'projects.html', {
+        'projects': projects
+    })
 
 def tasks(request):
     #t = Task.objects.get(id=id)
