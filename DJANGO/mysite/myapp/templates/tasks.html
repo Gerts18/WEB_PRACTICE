@@ -9,7 +9,14 @@
         {% for t in tasks %}
 
         <li><h1>{{t.title}} - {{t.project}} </h1></li>
-        
+
+        {% if t.done == False %}
+            <h2>Tarea <span style="color: red;">pendiente</span></h2>
+
+        {% else %}
+        <h2>Tarea <span style="color: blue;">completada</span></h2>
+
+        {%endif%}
 
         <p>{{t.description}} </p>
 
