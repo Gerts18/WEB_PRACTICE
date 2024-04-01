@@ -1,18 +1,40 @@
+{% extends 'layouts/base.html' %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <title>Tasks</title>
 </head>
 <body>
-    <h1>Taks</h1>
-    <ol>
-        {% for t in tasks %}
 
-        <li>{{t.title}} - {{t.project}} </li>
+    {% block content %}
+        <main>
 
-        <button>delete</button>
+            <h1>Taks</h1>
+            <ol>
+                {% for t in tasks %}
 
-        {% endfor %}
-    </ol>
+                <li><h1>{{t.title}} - {{t.project}} </h1></li>
+
+                {% if t.done == False %}
+                    <h2>Tarea <span style="color: red;">pendiente</span></h2>
+
+                {% else %}
+                <h2>Tarea <span style="color: blue;">completada</span></h2>
+
+                {%endif%}
+
+                <p>{{t.description}} </p>
+
+                <button>Delete</button>
+
+                <button>✓ Done</button>
+
+                {% endfor %}
+            </ol>
+
+        </main>
+    {% endblock %}
+    
+    
 </body>
 </html>

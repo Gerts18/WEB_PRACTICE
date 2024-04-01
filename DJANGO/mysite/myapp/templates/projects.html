@@ -1,9 +1,25 @@
-<h1>Projects</h1>
+{% extends 'layouts/base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Projects</title>
+</head>
+<body>
+    {% block content %}
+        <main>
 
-<ol>
-    {% for p in projects %}
+            <h1>Projects</h1>
 
-    <li>{{p.name}} </li>
+        <ol>
+            {% for p in projects %}
 
-    {% endfor %}
-</ol>
+            <li>{{p.name}} </li>
+
+            {% endfor %}
+        </ol>
+
+        </main>
+    {% endblock %}
+    
+</body>
+</html>
