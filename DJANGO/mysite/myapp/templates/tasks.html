@@ -8,9 +8,14 @@
     <ol>
         {% for t in tasks %}
 
-        <li>{{t.title}} - {{t.project}} </li>
+        <li><h1>{{t.title}} - {{t.project}} </h1></li>
+        
 
-        <button>delete</button>
+        <p>{{t.description}} </p>
+
+        <button>Delete</button>
+
+        <button>✓ Done</button>
 
         {% endfor %}
     </ol>
