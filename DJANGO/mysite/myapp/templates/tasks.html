@@ -1,30 +1,40 @@
+{% extends 'base.html' %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <title>Tasks</title>
 </head>
 <body>
-    <h1>Taks</h1>
-    <ol>
-        {% for t in tasks %}
 
-        <li><h1>{{t.title}} - {{t.project}} </h1></li>
+    {% block content %}
+        <main>
 
-        {% if t.done == False %}
-            <h2>Tarea <span style="color: red;">pendiente</span></h2>
+            <h1>Taks</h1>
+            <ol>
+                {% for t in tasks %}
 
-        {% else %}
-        <h2>Tarea <span style="color: blue;">completada</span></h2>
+                <li><h1>{{t.title}} - {{t.project}} </h1></li>
 
-        {%endif%}
+                {% if t.done == False %}
+                    <h2>Tarea <span style="color: red;">pendiente</span></h2>
 
-        <p>{{t.description}} </p>
+                {% else %}
+                <h2>Tarea <span style="color: blue;">completada</span></h2>
 
-        <button>Delete</button>
+                {%endif%}
 
-        <button>✓ Done</button>
+                <p>{{t.description}} </p>
 
-        {% endfor %}
-    </ol>
+                <button>Delete</button>
+
+                <button>✓ Done</button>
+
+                {% endfor %}
+            </ol>
+
+        </main>
+    {% endblock %}
+    
+    
 </body>
 </html>

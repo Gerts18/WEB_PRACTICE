@@ -1,3 +1,4 @@
+{% extends 'base.html' %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +7,9 @@
     <title>Info</title>
 </head>
 <body>
-    <h1>Wolcome to the info page</h1>
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad repudiandae error autem iste tenetur dolores rem recusandae? Eligendi et enim illum ipsam nesciunt accusamus. Obcaecati fugiat ipsa odit illum quod.</p>
+    {% block content %}
+        <h1>Wolcome to the info page</h1>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad repudiandae error autem iste tenetur dolores rem recusandae? Eligendi et enim illum ipsam nesciunt accusamus. Obcaecati fugiat ipsa odit illum quod.</p>
+    {% endblock %}
 </body>
 </html>
