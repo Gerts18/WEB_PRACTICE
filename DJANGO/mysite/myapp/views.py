@@ -28,3 +28,6 @@ def tasks(request):
     return render(request, 'tasks.html', {
         'tasks': tasks
     })
+
+def create_task(request):
+    return render(request, 'create_task.html')
