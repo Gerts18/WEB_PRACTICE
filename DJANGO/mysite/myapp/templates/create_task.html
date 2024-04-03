@@ -1,0 +1,24 @@
+{% extends 'layouts/base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Create</title>
+</head>
+<body>
+
+    {% block content %}
+
+    <h1>Create a new Task</h1>
+    <main>
+        <form method="POST">
+            {% csrf_token %}
+            {{form}}
+            <button>
+                Save
+            </button>
+        </form>
+    </main>
+
+    {% endblock %}
+</body>
+</html>
