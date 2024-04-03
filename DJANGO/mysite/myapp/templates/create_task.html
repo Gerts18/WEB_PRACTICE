@@ -10,7 +10,8 @@
 
     <h1>Create a new Task</h1>
     <main>
-        <form action="">
+        <form method="POST">
+            {% csrf_token %}
             {{form}}
             <button>
                 Save
