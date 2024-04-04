@@ -7,5 +7,6 @@ urlpatterns = [
     path('message/<str:username>',views.message),
     path('tasks/',views.tasks),
     path('projects/',views.projects),
-    path('create_task/', views.create_task)
+    path('create_task/', views.create_task),
+    path('create_project/',views.create_project)
 ]
