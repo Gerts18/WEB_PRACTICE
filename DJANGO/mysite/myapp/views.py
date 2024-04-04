@@ -19,21 +19,21 @@ def message(request, username): # This will help me to obtain info if the client
 def projects(request):
     #list_projects = list(Project.objects.values())
     projects = Project.objects.all()
-    return render(request, 'projects.html', {
+    return render(request, 'projects/projects.html', {
         'projects': projects
     })
 
 def tasks(request):
     #t = Task.objects.get(id=id)
     tasks = Task.objects.all()
-    return render(request, 'tasks.html', {
+    return render(request, 'tasks/tasks.html', {
         'tasks': tasks
     })
 
 def create_task(request):
     if request.method == 'GET':
         # Show interface
-        return render(request, 'create_task.html', {
+        return render(request, 'tasks/create_task.html', {
         'form': CreateNewTask()
         })
     else:
