@@ -1,7 +1,7 @@
 from django.http import HttpResponse, JsonResponse
 from .models import Project, Task
 from django.shortcuts import get_object_or_404, render, redirect
-from .forms import CreateNewTask
+from .forms import CreateNewTask, CreateNewProject
 # Create your views here.
 
 def index(request):
@@ -42,5 +42,13 @@ def create_task(request):
         return redirect('/tasks/') 
     
 def create_project(request):
-    return render(request, 'projects/create_project.html')
+    if request.method == 'GET':
+        return render(request, 'projects/create_project.html', {
+            'form': CreateNewProject()
+        })
+    else:
+        Project.objects.create(name=request.POST['name'])
+        return redirect('/projects/')
+        
+    
     

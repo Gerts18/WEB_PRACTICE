@@ -6,12 +6,17 @@
     <title>Create Project</title>
 </head>
 <body>
-
     
     {% block content %}
     <main>
         <h1>Create a Project</h1>
-        
+        <form method='POST'>
+            {% csrf_token %}
+            {{form}}
+            <button>
+                Save
+            </button>
+        </form>
     </main>
 
     {% endblock %}
