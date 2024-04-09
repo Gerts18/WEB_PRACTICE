@@ -36,3 +36,12 @@ img {
     margin: auto;
     padding: 20px 0px;
 }
+
+.card ol li {
+    background: white;
+    color: black;
+    font-weight: bolder;
+    text-transform: uppercase;
+    padding: 10px;
+    margin-bottom: 2px;
+}

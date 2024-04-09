@@ -7,17 +7,17 @@
 <body>
     {% block content %}
         <main>
+            <section class = 'card'>
+                <h1>Projects</h1>
 
-            <h1>Projects</h1>
-
-        <ol>
-            {% for p in projects %}
-
-            <li>{{p.name}} </li>
-
-            {% endfor %}
-        </ol>
-
+                <ol>
+                    {% for p in projects %}
+        
+                    <li>{{p.name}} </li>
+        
+                    {% endfor %}
+                </ol>
+            </section>
         </main>
     {% endblock %}
     
