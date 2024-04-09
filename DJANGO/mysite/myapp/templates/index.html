@@ -7,10 +7,12 @@
 </head>
 <body>
 
+    {% load static%}
     
     {% block content %}
     <main>
         <h1>{{title}}</h1>
+        <img src = '{% static 'Coding.jpg' %}' > </img>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At unde eligendi velit rerum est. Reprehenderit saepe a aliquid dolorem cumque ullam ad laboriosam culpa? Suscipit officiis itaque delectus totam tenetur.</p>
     </main>
 
