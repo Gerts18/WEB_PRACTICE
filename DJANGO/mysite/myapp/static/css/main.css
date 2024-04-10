@@ -45,3 +45,9 @@ img {
     padding: 10px;
     margin-bottom: 2px;
 }
+
+.input {
+    background-color: wheat;
+    padding: 10px;
+    text-align: center;
+}
