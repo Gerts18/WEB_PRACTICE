@@ -49,6 +49,11 @@ def create_project(request):
     else:
         Project.objects.create(name=request.POST['name'])
         return redirect('projects')
-        
+
+def project_detail(request, id):
+    details = Project.objects.get(id=id)
+    return render(request, 'projects/detail.html', {
+        'details': details
+    })
     
     
