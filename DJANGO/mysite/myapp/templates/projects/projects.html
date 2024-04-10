@@ -7,17 +7,17 @@
 <body>
     {% block content %}
         <main>
+            <section class = 'card'>
+                <h1>Projects</h1>
 
-            <h1>Projects</h1>
-
-        <ol>
-            {% for p in projects %}
-
-            <li>{{p.name}} </li>
-
-            {% endfor %}
-        </ol>
-
+                <ul>
+                    {% for p in projects %}
+        
+                    <li> <a href="{% url 'project_d' p.id %}"> {{p.name}}  </a> </li>
+        
+                    {% endfor %}
+                </ul>
+            </section>
         </main>
     {% endblock %}
     

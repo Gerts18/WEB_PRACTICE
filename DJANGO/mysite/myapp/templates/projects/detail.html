@@ -1,0 +1,21 @@
+{% extends 'layouts/base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Details</title>
+</head>
+<body>
+    {% block content %}
+        <h1> Project Detail </h1>
+        <p> Name = {{details}} </p>
+        <h2> Tasks </h2>
+        <section class = 'card'>
+            {% for t in task %}
+                    <ul>
+                        <li> {{t.title}} </li>
+                    </ul>
+            {% endfor%}
+        </section>
+    {% endblock %}
+</body>
+</html>
