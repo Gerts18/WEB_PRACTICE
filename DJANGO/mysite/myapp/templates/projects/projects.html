@@ -10,13 +10,13 @@
             <section class = 'card'>
                 <h1>Projects</h1>
 
-                <ol>
+                <ul>
                     {% for p in projects %}
         
-                    <li> <a href=''> {{p.name}}  </a> </li>
+                    <li> <a href="{% url 'project_d' p.id %}"> {{p.name}}  </a> </li>
         
                     {% endfor %}
-                </ol>
+                </ul>
             </section>
         </main>
     {% endblock %}

@@ -37,7 +37,7 @@ img {
     padding: 20px 0px;
 }
 
-.card ol li {
+.card ul li {
     background: white;
     color: black;
     font-weight: bolder;
