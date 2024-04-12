@@ -11,6 +11,16 @@
     display: none;
 }
 
+/*MAIN - Superior Section*/
+
+.superior__seccion__container{
+    display: flex;
+    align-items: center;
+    white-space: nowrap; /*Avoiding a breaking on the elements*/
+    overflow: scroll;
+    gap: 15px; /*Adding space between elements*/
+}
+
 /*FOOTER*/
 .rodapie__container{
     display: flex;
