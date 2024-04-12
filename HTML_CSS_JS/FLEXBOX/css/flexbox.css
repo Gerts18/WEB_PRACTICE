@@ -2,7 +2,7 @@
 .cabecera__container{
     display: flex;
     justify-content: space-between ;
-    align-items: center;
+    align-items: center; /*Align items inside a Parent class*/
     position: fixed;
     top: 0;
 }
@@ -11,13 +11,45 @@
     display: none;
 }
 
-/*MAIN - Superior Section*/
+/*MAIN*/
 
+
+/*Menu*/
+.menu__container{
+    position: fixed;
+    bottom: 0%;
+    height: 75px;
+    width: 100%;
+}
+
+.menu__lista{
+    display: flex;
+    justify-content: space-around;
+    height: 100%;
+}
+
+.menu__lista li {
+    align-self: center; /*Align items individualy */
+}
+
+.menu__itens{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.menu__lista:nth-child(2),
+.menu__lista:nth-child(3),
+.menu__lista:nth-child(4){
+    display: none;
+}
+
+/*Superior Section*/
 .superior__seccion__container{
     display: flex;
     align-items: center;
     white-space: nowrap; /*Avoiding a breaking on the elements*/
-    overflow: scroll;
+    overflow: scroll; /*Scroll nav*/
     gap: 15px; /*Adding space between elements*/
 }
 
