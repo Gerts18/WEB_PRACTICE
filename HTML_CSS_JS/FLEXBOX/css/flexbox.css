@@ -11,13 +11,23 @@
     display: none;
 }
 
-/*MAIN - Superior Section*/
+/*MAIN*/
 
+
+/*Menu*/
+.menu__container{
+    position: fixed;
+    bottom: 0%;
+    height: 75px;
+    width: 100%;
+}
+
+/*Superior Section*/
 .superior__seccion__container{
     display: flex;
     align-items: center;
     white-space: nowrap; /*Avoiding a breaking on the elements*/
-    overflow: scroll;
+    overflow: scroll; /*Scroll nav*/
     gap: 15px; /*Adding space between elements*/
 }
 
