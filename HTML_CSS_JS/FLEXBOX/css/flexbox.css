@@ -1,3 +1,4 @@
+/*HEADER*/
 .cabecera__container{
     display: flex;
     justify-content: space-between ;
@@ -6,8 +7,27 @@
     top: 0;
 }
 
+.cabecera__buscar__item{
+    display: none;
+}
+
+/*FOOTER*/
+.rodapie__container{
+    display: flex;
+    /* flex-direction: column;
+    flex-wrap: wrap; */
+    flex-flow: column wrap; /*  */
+}
+
 @media (min-width:834px){
+
+    /*HEADER*/
     .cabecera__buscar__item{
         display: block;
+    }
+
+    /*FOOTER*/
+    .rodapie__container{
+        justify-content: space-between;
     }
 }
