@@ -32,6 +32,12 @@
     align-self: center; /*Align items individualy */
 }
 
+.menu__itens{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
 .menu__lista:nth-child(2),
 .menu__lista:nth-child(3),
 .menu__lista:nth-child(4){
