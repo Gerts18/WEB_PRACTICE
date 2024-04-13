@@ -1,8 +1,8 @@
 /*HEADER*/
 .cabecera__container{
     display: flex;
-    justify-content: space-between ;
-    align-items: center; /*Align items inside a Parent class*/
+    justify-content: space-between ; /*Align items horizontally*/
+    align-items: center; /*Align items inside a Parent class vertically*/
     position: fixed;
     top: 0;
 }
@@ -58,7 +58,7 @@
     display: flex;
     /* flex-direction: column;
     flex-wrap: wrap; */
-    flex-flow: column wrap; /*  */
+    flex-flow: column wrap; 
 }
 
 @media (min-width:834px){
@@ -68,8 +68,71 @@
         display: block;
     }
 
+    /*MAIN*/
+
+    /*Menu*/
+    .menu__container{
+        left: 0;
+        height: auto;
+        width: 74px;
+        top: 80px;
+    }
+
+    .menu__lista{
+        flex-direction: column;
+        justify-content: flex-start;
+        padding-top: 15px;
+        gap: 33px;  
+    }
+
     /*FOOTER*/
     .rodapie__container{
         justify-content: space-between;
     }
+}
+
+@media (min-width: 1440px){
+
+    /*MAIN*/
+
+    /*Menu*/
+    .menu__container{
+        width: 239px;
+        overflow: scroll;
+    }
+
+    .menu__lista:nth-child(2),
+    .menu__lista:nth-child(3),
+    .menu__lista:nth-child(4){
+        display: flex;
+    }
+
+    .menu__lista{
+        height: auto;
+        padding: 20px 17px 20px 25px;
+        gap: 15px;
+    }
+
+    .menu__lista:nth-child(3){
+        flex-direction: column-reverse;
+    }
+
+    .menu__itens{
+        flex-direction: row;
+        gap: 15px;
+        align-items: center;
+    }
+    
+    .videojuegos{
+        order: 3;
+    }
+
+    .peliculas{
+        order: 2;
+    }
+
+    .premium{
+        order: 1;
+    }
+    
 }
