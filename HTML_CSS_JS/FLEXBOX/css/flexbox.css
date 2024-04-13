@@ -70,7 +70,7 @@
 
     /*MAIN*/
 
-    /*MENU*/
+    /*Menu*/
     .menu__container{
         left: 0;
         height: auto;
@@ -89,4 +89,28 @@
     .rodapie__container{
         justify-content: space-between;
     }
+}
+
+@media (min-width: 1440px){
+
+    /*MAIN*/
+
+    /*Menu*/
+    .menu__container{
+        width: 239px;
+        overflow: scroll;
+    }
+
+    .menu__lista:nth-child(2),
+    .menu__lista:nth-child(3),
+    .menu__lista:nth-child(4){
+        display: flex;
+    }
+
+    .menu__lista{
+        height: auto;
+        padding: 20px 17px 20px 25px;
+    }
+
+
 }
