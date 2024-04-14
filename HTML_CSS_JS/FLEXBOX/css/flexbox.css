@@ -13,7 +13,6 @@
 
 /*MAIN*/
 
-
 /*Menu*/
 .menu__container{
     position: fixed;
@@ -51,6 +50,12 @@
     white-space: nowrap; /*Avoiding a breaking on the elements*/
     overflow: scroll; /*Scroll nav*/
     gap: 15px; /*Adding space between elements*/
+}
+
+/*Videos Section*/
+.videos__item{
+    height: 303px;
+    width: 280px;
 }
 
 /*FOOTER*/
