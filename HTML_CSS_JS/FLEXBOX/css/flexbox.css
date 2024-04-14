@@ -53,9 +53,15 @@
 }
 
 /*Videos Section*/
+.videos__container{
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .videos__item{
     height: 303px;
     width: 280px;
+    flex-grow: 1; /*Distribute items equally in the container*/
 }
 
 .descripcion-video{
@@ -66,7 +72,7 @@
 
 .descripcion-video img {
     margin-right: 1rem; 
-    flex-shrink: 0;  /*  Evita que la imagen se reduzca */
+    flex-shrink: 0;  /* Avoid image reduction*/
 }
 
 .detalles__video {
