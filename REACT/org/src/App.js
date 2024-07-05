@@ -1,6 +1,6 @@
 import './App.css';
-import Form from './components/Form/Form';
-import Header from './components/Header/Header';
+import Form from './components/Form/Form.js';
+import Header from './components/Header/Header.jsx';
 /* console.log(Header) */
 
 function App() {
