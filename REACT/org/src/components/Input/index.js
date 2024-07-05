@@ -3,7 +3,7 @@ import './Input.css';
 
 function Input() {
   return (
-    <div>
+    <div className='text-input'>
       <label>Nombre</label>
       <input placeholder='Ingresar nombre' />
     </div>
