@@ -7,7 +7,9 @@ const Form = () => {
     <section className='form'>
       <form>
         <h2>Rellena el formulario para crear el colaborador.</h2>
-        <Input/>
+        <Input titulo="Nombre" />
+        <Input titulo="Puesto" />
+        <Input titulo="Foto" />
       </form>
     </section>
   )

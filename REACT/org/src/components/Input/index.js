@@ -1,11 +1,11 @@
 import React from 'react';
 import './Input.css';
 
-function Input() {
+function Input(props) {
   return (
     <div className='text-input'>
-      <label>Nombre</label>
-      <input placeholder='Ingresar nombre' />
+      <label>{props.titulo} </label>
+      <input placeholder={`Ingresa tu ${props.titulo.toLowerCase()}`} />
     </div>
   )
 }
