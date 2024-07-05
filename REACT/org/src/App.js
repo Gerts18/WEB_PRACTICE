@@ -1,12 +1,15 @@
 import './App.css';
+import Form from './components/Form/Form';
 import Header from './components/Header/Header';
-console.log(Header)
+/* console.log(Header) */
+
 function App() {
   return (
-    <div className="App">
+    <div>
       {/* {Header()} */}
       {/* <Header> </Header> */}
       <Header/>
+      <Form/>
     </div>
   );
 }
