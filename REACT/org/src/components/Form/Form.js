@@ -5,9 +5,15 @@ import OptionList from '../OptionList';
 import Button from '../Button';
 
 const Form = () => {
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log('Handling submit', event)
+  }
+
   return (
     <section className='form'>
-      <form>
+      <form onSubmit={handleSubmit} >
         <h2>Rellena el formulario para crear el colaborador.</h2>
         <Input titulo="Nombre" />
         <Input titulo="Puesto" />
