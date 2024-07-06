@@ -2,6 +2,7 @@ import React from 'react';
 import './Form.css';
 import Input from '../Input';
 import OptionList from '../OptionList';
+import Button from '../Button';
 
 const Form = () => {
   return (
@@ -12,6 +13,9 @@ const Form = () => {
         <Input titulo="Puesto" />
         <Input titulo="Foto" />
         <OptionList/>
+        <Button>
+          Crear
+        </Button>
       </form>
     </section>
   )
