@@ -4,7 +4,7 @@ import Input from '../Input';
 import OptionList from '../OptionList';
 import Button from '../Button';
 
-const Form = () => {
+const Form = (props) => {
 
   const [name, setName] = useState("");
   const [occupation, setOcupation] = useState("");
@@ -46,6 +46,7 @@ const Form = () => {
           updateValue = {setImage} 
         />
         <OptionList
+          teamsList = {props.teamsList}
           value = {team}
           updateValue = {setTeam}
           required
