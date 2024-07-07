@@ -5,12 +5,13 @@ import Header from './components/Header/Header.jsx';
 import MiOrg from './components/MiOrg/index.js';
 import Team from './components/Team/index.js';
 
-/* console.log(Header) */
-
 function App() {
 
   //Ternario -->  condicion ? true : false
-  // corto circuito --> condicion && true
+  // Corto circuito --> condicion && true
+
+  const [displayForm, setDisplayForm] = useState(false);
+  const [collaborators, setCollaborators] = useState([]);
 
   const teamsList = [
     {
@@ -48,14 +49,23 @@ function App() {
       primaryColor: "#FF8A29",
       secondaryColor: "#FFEEDF",
     }
-  ]
+  ] 
 
-  const [displayForm, setDisplayForm] = useState(false);
+  //Register Collaborator 
+  const registerCollaborator = (collaborator) => {
+    //Spread Operator
+    setCollaborators([...collaborators, collaborator])
+  }
 
   return (
     <div>
       <Header/>
-      {displayForm && <Form teams={teamsList.map((team) => team.title)} /> }
+      {
+        displayForm && <Form 
+          teams={teamsList.map((team) => team.title)} 
+          registerCollab = {registerCollaborator}
+        /> 
+      }
       <MiOrg changeDisplay={() => setDisplayForm(!displayForm)} />
       {
         teamsList.map( (team, id) => {

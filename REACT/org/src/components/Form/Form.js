@@ -11,6 +11,9 @@ const Form = (props) => {
   const [image, setImage] = useState("");
   const [team, setTeam] = useState("");
 
+  //Desestructuracion
+  const {registerCollab} = props
+
   const handleSubmit = (event) => {
     event.preventDefault();
     let data = {
@@ -20,7 +23,7 @@ const Form = (props) => {
       team
     }
     
-    console.log(data)
+    registerCollab(data)
   }
 
   return (

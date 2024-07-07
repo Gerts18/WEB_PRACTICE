@@ -1,3 +1,4 @@
+import Collaborator from '../Collaborator';
 import './Team.css';
 
 const Team = (props) => {
@@ -10,7 +11,8 @@ const Team = (props) => {
         <section className="team" style={{backgroundColor: secondaryColor}} >
             <h3 style={titleStyle}>{title} </h3>
             <div className="collaborators">
-
+                <Collaborator/>
+                <Collaborator/>
             </div>
         </section>
     )

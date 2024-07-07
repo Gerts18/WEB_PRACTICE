@@ -14,3 +14,9 @@
     display: inline-block;
     padding-bottom: 8px;
 }
+
+.collaborators{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
