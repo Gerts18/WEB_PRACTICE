@@ -4,10 +4,10 @@ import './Input.css';
 function Input(props) {
   //console.log('Datos:', props)
 
-  const [value, setValue] = useState("");
+  //const [value, setValue] = useState("");
 
   const handleValue = (event) => {
-    setValue(event.target.value);
+    props.updateValue(event.target.value);
   }
 
   return (
@@ -16,7 +16,7 @@ function Input(props) {
       <input 
         placeholder={`Ingresa tu ${props.titulo.toLowerCase()}`} 
         required={props.required} 
-        value={value} 
+        value={props.value} 
         onChange={handleValue}
       />
     </div>

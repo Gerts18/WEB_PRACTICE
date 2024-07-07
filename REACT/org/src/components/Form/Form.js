@@ -1,4 +1,4 @@
-import React from 'react';
+import {React, useState} from 'react';
 import './Form.css';
 import Input from '../Input';
 import OptionList from '../OptionList';
@@ -6,18 +6,43 @@ import Button from '../Button';
 
 const Form = () => {
 
+  const [name, setName] = useState("");
+  const [occupation, setOcupation] = useState("");
+  const [image, setImage] = useState("");
+
   const handleSubmit = (event) => {
     event.preventDefault();
-    //console.log('Handling submit', event)
+    let data = {
+      name,
+      occupation,
+      image
+    }
+
+    console.log(data)
   }
 
   return (
     <section className='form'>
       <form onSubmit={handleSubmit} >
         <h2>Rellena el formulario para crear el colaborador.</h2>
-        <Input titulo="Nombre" required={true} />
-        <Input titulo="Puesto" required />
-        <Input titulo="Foto" required />
+        <Input 
+          titulo="Nombre" 
+          required={true} 
+          value ={name} 
+          updateValue = {setName} 
+        />
+        <Input 
+          titulo="Puesto" 
+          required 
+          value ={occupation} 
+          updateValue = {setOcupation} 
+        />
+        <Input  
+          titulo="Foto" 
+          required 
+          value ={image} 
+          updateValue = {setImage} 
+        />
         <OptionList/>
         <Button>
           Crear
