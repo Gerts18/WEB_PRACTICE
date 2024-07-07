@@ -8,7 +8,7 @@ const Form = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log('Handling submit', event)
+    //console.log('Handling submit', event)
   }
 
   return (

@@ -3,7 +3,7 @@ import './Input.css';
 
 function Input(props) {
 
-  console.log('Datos:', props)
+  //console.log('Datos:', props)
 
   return (
     <div className='text-input'>
