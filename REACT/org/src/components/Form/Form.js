@@ -15,9 +15,9 @@ const Form = () => {
     <section className='form'>
       <form onSubmit={handleSubmit} >
         <h2>Rellena el formulario para crear el colaborador.</h2>
-        <Input titulo="Nombre" />
-        <Input titulo="Puesto" />
-        <Input titulo="Foto" />
+        <Input titulo="Nombre" required={true} />
+        <Input titulo="Puesto" required />
+        <Input titulo="Foto" required />
         <OptionList/>
         <Button>
           Crear
