@@ -9,15 +9,17 @@ const Form = () => {
   const [name, setName] = useState("");
   const [occupation, setOcupation] = useState("");
   const [image, setImage] = useState("");
+  const [team, setTeam] = useState("");
 
   const handleSubmit = (event) => {
     event.preventDefault();
     let data = {
       name,
       occupation,
-      image
+      image,
+      team
     }
-
+    
     console.log(data)
   }
 
@@ -43,7 +45,11 @@ const Form = () => {
           value ={image} 
           updateValue = {setImage} 
         />
-        <OptionList/>
+        <OptionList
+          value = {team}
+          updateValue = {setTeam}
+          required
+        />
         <Button>
           Crear
         </Button>
