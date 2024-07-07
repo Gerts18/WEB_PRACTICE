@@ -1,14 +1,14 @@
 import {React, useState} from 'react'
 import './MiOrg.css'
 
-const MiOrg = () => {
+const MiOrg = (props) => {
   //Estado - hooks
   //useState
-  const [display, setDisplay] = useState(true);
+  //const [display, setDisplay] = useState(true);
 
   const handleClick = () => {
-      setDisplay(!display);
-      console.log('Mostrar/ocultar elemento', display)
+      //setDisplay(!display);
+      props.changeDisplay();
   }
 
   return (
