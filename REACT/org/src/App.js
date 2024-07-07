@@ -55,7 +55,7 @@ function App() {
   return (
     <div>
       <Header/>
-      {displayForm && <Form teamsList={teamsList} /> }
+      {displayForm && <Form teams={teamsList.map((team) => team.title)} /> }
       <MiOrg changeDisplay={() => setDisplayForm(!displayForm)} />
       {
         teamsList.map( (team, id) => {

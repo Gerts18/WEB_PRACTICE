@@ -1,7 +1,7 @@
 import './Team.css';
 
 const Team = (props) => {
-    //Desctructuracion
+    //Desesctructuracion
     const {title, secondaryColor, primaryColor} = props.data;
 
     const titleStyle = {borderColor: primaryColor}

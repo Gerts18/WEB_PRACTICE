@@ -46,7 +46,7 @@ const Form = (props) => {
           updateValue = {setImage} 
         />
         <OptionList
-          teamsList = {props.teamsList}
+          teams = {props.teams}
           value = {team}
           updateValue = {setTeam}
           required
