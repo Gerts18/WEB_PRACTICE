@@ -77,6 +77,11 @@ function App() {
 
   }
 
+  //Update Color Team
+  const updateColor = (color, title) =>{
+    console.log('Color', color, title)
+  }
+
   return (
     <div>
       <Header/>
@@ -95,6 +100,7 @@ function App() {
           key={team.title}
           collaborators = {collaborators.filter(collaborator => collaborator.team === team.title)}
           deleteCollab = {deleteCollaborator}
+          updateColor = {updateColor}
          />
         )
       } 

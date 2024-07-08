@@ -4,18 +4,20 @@ import Collaborator from '../Collaborator';
 const Team = (props) => {
     //Desesctructuracion
     const {title, secondaryColor, primaryColor} = props.data;
-    const {collaborators, deleteCollab} = props
+    const {collaborators, deleteCollab, updateColor} = props
 
     const titleStyle = {borderColor: primaryColor}
+
+    const backgroundTeamStyle = {backgroundColor: secondaryColor}
 
     const notEmpty = collaborators.length > 0 
 
     const handleColor = (e) =>{
-        console.log(e.target.value)
+        updateColor(e.target.value, title)
     }   
 
     return ( notEmpty &&
-        <section className="team" style={{backgroundColor: secondaryColor}} >
+        <section className="team" style={backgroundTeamStyle} >
             <input
                 type='color'
                 className='input-color'
