@@ -22,8 +22,11 @@ const Form = (props) => {
       image,
       team
     }
-    
     registerCollab(data)
+    setName("")
+    setOcupation("")
+    setImage("")
+    setTeam("")
   }
 
   return (

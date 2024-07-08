@@ -1,15 +1,18 @@
 import React from 'react'
 import './Collaborator.css'
 
-const Collaborator = () => {
+const Collaborator = (props) => {
+
+  const {image, name, occupation, team} = props.data
+
   return (
     <div className='collaborator'>
       <div className='cardHeader'>
-        <img src='https://github.com/Gerts18.png' alt='Ger'/>
+        <img src={image} alt={name} />
       </div>
       <div className='info'>
-        <h4>Ger</h4>
-        <h5>Programador</h5>
+        <h4>{name}</h4>
+        <h5>{occupation}</h5>
       </div>
     </div>
   )

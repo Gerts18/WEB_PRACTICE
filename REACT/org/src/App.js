@@ -66,11 +66,16 @@ function App() {
           registerCollab = {registerCollaborator}
         /> 
       }
+
       <MiOrg changeDisplay={() => setDisplayForm(!displayForm)} />
+
       {
-        teamsList.map( (team, id) => {
-          return <Team data={team} key={team.title} />
-        })
+        teamsList.map( (team) => <Team 
+          data={team} 
+          key={team.title}
+          collaborators = {collaborators}
+         />
+        )
       } 
     </div>
   )
