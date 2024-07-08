@@ -7,10 +7,6 @@ import Team from './components/Team/index.js';
 import Footer from './components/Footer/index.jsx';
 
 function App() {
-
-  // Ternario -->  condicion ? true : false
-  // Corto circuito --> condicion && true
-
   const [displayForm, setDisplayForm] = useState(false);
   const [collaborators, setCollaborators] = useState([
     {
@@ -26,9 +22,8 @@ function App() {
       occupation:"Sr Programmer"
     }
   ]);
-
   //List of teams available
-  const teamsList = [
+  const [teamsList, setTeamsList] = useState([
     {
       title: "Programacion",
       primaryColor: "#57C278",
@@ -64,7 +59,10 @@ function App() {
       primaryColor: "#FF8A29",
       secondaryColor: "#FFEEDF",
     }
-  ] 
+  ])
+
+  // Ternario -->  condicion ? true : false
+  // Corto circuito --> condicion && true
 
   //Register Collaborator 
   const registerCollaborator = (collaborator) => {
@@ -78,8 +76,14 @@ function App() {
   }
 
   //Update Color Team
-  const updateColor = (color, title) =>{
-    console.log('Color', color, title)
+  const updateColor = (newColor, title) =>{
+    const teamsUpdated = teamsList.map((team) => {
+      if(team.title === title){
+        team.primaryColor = newColor;
+      }
+      return team
+    })
+    setTeamsList(teamsUpdated)
   }
 
   return (
