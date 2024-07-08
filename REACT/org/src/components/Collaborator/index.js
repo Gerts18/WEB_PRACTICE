@@ -5,9 +5,11 @@ const Collaborator = (props) => {
 
   const {image, name, occupation} = props.data
 
+  const headerColor = {backgroundColor: props.color }
+
   return (
     <div className='collaborator'>
-      <div className='cardHeader'>
+      <div className='cardHeader' style={headerColor}>
         <img src={image} alt={name} />
       </div>
       <div className='info'>

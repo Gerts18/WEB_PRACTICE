@@ -18,6 +18,7 @@ const Team = (props) => {
                     collaborators.map((collaborator, index) => <Collaborator 
                         data={collaborator} 
                         key={index} 
+                        color = {primaryColor}
                     /> )
                 }
             </div>
