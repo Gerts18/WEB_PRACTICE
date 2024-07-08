@@ -1,5 +1,6 @@
 import './Team.css';
 import Collaborator from '../Collaborator';
+import hexToRgba from 'hex-to-rgba';
 
 const Team = (props) => {
     //Desesctructuracion
@@ -8,7 +9,7 @@ const Team = (props) => {
 
     const titleStyle = {borderColor: primaryColor}
 
-    const backgroundTeamStyle = {backgroundColor: secondaryColor}
+    const backgroundTeamStyle = {backgroundColor: hexToRgba(primaryColor, 0.6)}
 
     const notEmpty = collaborators.length > 0 
 
@@ -21,7 +22,7 @@ const Team = (props) => {
             <input
                 type='color'
                 className='input-color'
-                value={secondaryColor}
+                value={hexToRgba(primaryColor, 0.6)}
                 onChange={handleColor}
             />
             <h3 style={titleStyle}>{title} </h3>
