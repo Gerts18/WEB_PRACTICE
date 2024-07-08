@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import './App.css';
 import Form from './components/Form/Form.js';
 import Header from './components/Header/Header.jsx';
@@ -10,12 +11,14 @@ function App() {
   const [displayForm, setDisplayForm] = useState(false);
   const [collaborators, setCollaborators] = useState([
     {
+    id: uuidv4(),
     name:"German Torres", 
     image:"https://github.com/Gerts18.png", 
     team:"Programacion", 
     occupation:"Lead Programmer"
     },
     {
+      id: uuidv4(),
       name:"Eddy", 
       image:"https://github.com/eddy3o.png", 
       team:"Front End", 
@@ -25,36 +28,43 @@ function App() {
   //List of teams available
   const [teamsList, setTeamsList] = useState([
     {
+      id: uuidv4(),
       title: "Programacion",
       primaryColor: "#57C278",
       secondaryColor: "#D9F7E9",
     },
     {
+      id: uuidv4(),
       title: "Front End",
       primaryColor: "#82CFFA",
       secondaryColor: "#E8F8FF",
     },
     {
+      id: uuidv4(),
       title: "Data Science",
       primaryColor: "#A6D157",
       secondaryColor: "#F0F8E2",
     },
     {
+      id: uuidv4(),
       title: "Devops",
       primaryColor: "#E06B69",
       secondaryColor: "#FDE7E8",
     },
     {
+      id: uuidv4(),
       title: "UX y Diseño",
       primaryColor: "#DB6EBF",
       secondaryColor: "#FAE9F5",
     },
     {
+      id: uuidv4(),
       title: "Móvil",
       primaryColor: "#FFBA05",
       secondaryColor: "#FFF5D9",
     },
     {
+      id: uuidv4(),
       title: "Innovación y  Gestión",
       primaryColor: "#FF8A29",
       secondaryColor: "#FFEEDF",
@@ -66,6 +76,7 @@ function App() {
 
   //Register Collaborator 
   const registerCollaborator = (collaborator) => {
+    collaborator.id = uuidv4()
     //Spread Operator
     setCollaborators([...collaborators, collaborator])
   }
@@ -76,9 +87,9 @@ function App() {
   }
 
   //Update Color Team
-  const updateColor = (newColor, title) =>{
+  const updateColor = (newColor, id) =>{
     const teamsUpdated = teamsList.map((team) => {
-      if(team.title === title){
+      if(team.id === id){
         team.primaryColor = newColor;
       }
       return team
