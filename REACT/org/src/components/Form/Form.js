@@ -17,7 +17,7 @@ const Form = (props) => {
   const [color, setColor] = useState("")
 
   //Desestructuracion
-  const {registerCollab} = props
+  const {registerCollab, createTeam } = props
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -32,6 +32,17 @@ const Form = (props) => {
     setOcupation("")
     setImage("")
     setTeam("")
+  }
+
+  const handleSubmitTeam = (event) => {
+    event.preventDefault();
+    let data = {
+      title,
+      primaryColor: color
+    }
+    createTeam(data)
+    setColor("")
+    setTitle("")
   }
 
   return (
@@ -66,7 +77,7 @@ const Form = (props) => {
           Crear
         </Button>
       </form>
-      <form onSubmit={handleSubmit} >
+      <form onSubmit={handleSubmitTeam} >
         <h2>Rellena el formulario para crear el equipo.</h2>
         <Input 
           titulo="Titulo" 

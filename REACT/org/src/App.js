@@ -106,7 +106,9 @@ function App() {
   }
 
   //Create team
-  
+  const createTeam = (newTeam) => {
+    setTeamsList([...teamsList, {...newTeam, id: uuidv4() } ])
+  }
 
   return (
     <div>
@@ -115,6 +117,7 @@ function App() {
         displayForm && <Form 
           teams={teamsList.map((team) => team.title)} 
           registerCollab = {registerCollaborator}
+          createTeam = {createTeam}
         /> 
       }
 
