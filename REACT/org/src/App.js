@@ -8,12 +8,26 @@ import Footer from './components/Footer/index.jsx';
 
 function App() {
 
-  //Ternario -->  condicion ? true : false
+  // Ternario -->  condicion ? true : false
   // Corto circuito --> condicion && true
 
   const [displayForm, setDisplayForm] = useState(false);
-  const [collaborators, setCollaborators] = useState([{name:"German Torres", image:"https://github.com/Gerts18.png", team:"Programacion", occupation:"Lead Programmer"}]);
+  const [collaborators, setCollaborators] = useState([
+    {
+    name:"German Torres", 
+    image:"https://github.com/Gerts18.png", 
+    team:"Programacion", 
+    occupation:"Lead Programmer"
+    },
+    {
+      name:"Eddy", 
+      image:"https://github.com/eddy3o.png", 
+      team:"Front End", 
+      occupation:"Sr Programmer"
+    }
+  ]);
 
+  //List of teams available
   const teamsList = [
     {
       title: "Programacion",
@@ -58,6 +72,11 @@ function App() {
     setCollaborators([...collaborators, collaborator])
   }
 
+  //Eliminate Collaborator
+  const deleteCollaborator = () => {
+
+  }
+
   return (
     <div>
       <Header/>
@@ -75,6 +94,7 @@ function App() {
           data={team} 
           key={team.title}
           collaborators = {collaborators.filter(collaborator => collaborator.team === team.title)}
+          deleteCollab = {deleteCollaborator}
          />
         )
       } 

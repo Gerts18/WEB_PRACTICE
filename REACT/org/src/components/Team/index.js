@@ -4,7 +4,7 @@ import Collaborator from '../Collaborator';
 const Team = (props) => {
     //Desesctructuracion
     const {title, secondaryColor, primaryColor} = props.data;
-    const {collaborators} = props
+    const {collaborators, deleteCollab} = props
 
     const titleStyle = {borderColor: primaryColor}
 
@@ -19,6 +19,7 @@ const Team = (props) => {
                         data={collaborator} 
                         key={index} 
                         color = {primaryColor}
+                        deleteCollab = {deleteCollab}
                     /> )
                 }
             </div>
