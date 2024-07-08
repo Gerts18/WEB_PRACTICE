@@ -23,6 +23,13 @@ function App() {
       image:"https://github.com/eddy3o.png", 
       team:"Front End", 
       occupation:"Sr Programmer"
+    },
+    {
+      id: uuidv4(),
+      name:"Andre", 
+      image:"https://github.com/Andreexd.png", 
+      team:"Programacion", 
+      occupation:"Jr programmer"
     }
   ]);
   //List of teams available
@@ -82,8 +89,9 @@ function App() {
   }
 
   //Eliminate Collaborator
-  const deleteCollaborator = () => {
-
+  const deleteCollaborator = (id) => {
+    const collaboratorsUpdated = collaborators.filter(collaborator => collaborator.id !== id)
+    setCollaborators(collaboratorsUpdated)
   }
 
   //Update Color Team

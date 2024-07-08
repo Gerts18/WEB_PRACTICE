@@ -4,7 +4,7 @@ import { TiDelete } from "react-icons/ti";
 
 const Collaborator = (props) => {
 
-  const {image, name, occupation} = props.data
+  const {image, name, occupation, id} = props.data
 
   const {color, deleteCollab} = props
 
@@ -12,7 +12,7 @@ const Collaborator = (props) => {
 
   return (
     <div className='collaborator'>
-      <TiDelete className='delete' onClick={deleteCollab}></TiDelete>
+      <TiDelete className='delete' onClick={() => deleteCollab(id)}></TiDelete>
       <div className='cardHeader' style={headerColor}>
         <img src={image} alt={name} />
       </div>
