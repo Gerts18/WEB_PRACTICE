@@ -73,7 +73,7 @@ function App() {
         teamsList.map( (team) => <Team 
           data={team} 
           key={team.title}
-          collaborators = {collaborators}
+          collaborators = {collaborators.filter(collaborator => collaborator.team === team.title)}
          />
         )
       } 

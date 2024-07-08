@@ -3,7 +3,7 @@ import './Collaborator.css'
 
 const Collaborator = (props) => {
 
-  const {image, name, occupation, team} = props.data
+  const {image, name, occupation} = props.data
 
   return (
     <div className='collaborator'>

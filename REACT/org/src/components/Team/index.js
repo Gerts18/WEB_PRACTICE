@@ -8,7 +8,9 @@ const Team = (props) => {
 
     const titleStyle = {borderColor: primaryColor}
 
-    return (
+    const notEmpty = collaborators.length > 0 
+
+    return ( notEmpty &&
         <section className="team" style={{backgroundColor: secondaryColor}} >
             <h3 style={titleStyle}>{title} </h3>
             <div className="collaborators">
