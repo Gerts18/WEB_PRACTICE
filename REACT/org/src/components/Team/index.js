@@ -10,8 +10,18 @@ const Team = (props) => {
 
     const notEmpty = collaborators.length > 0 
 
+    const handleColor = (e) =>{
+        console.log(e.target.value)
+    }   
+
     return ( notEmpty &&
         <section className="team" style={{backgroundColor: secondaryColor}} >
+            <input
+                type='color'
+                className='input-color'
+                value={secondaryColor}
+                onChange={handleColor}
+            />
             <h3 style={titleStyle}>{title} </h3>
             <div className="collaborators">
                 {
