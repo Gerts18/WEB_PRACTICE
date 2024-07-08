@@ -6,10 +6,15 @@ import Button from '../Button';
 
 const Form = (props) => {
 
+  //Collaborator info
   const [name, setName] = useState("");
   const [occupation, setOcupation] = useState("");
   const [image, setImage] = useState("");
   const [team, setTeam] = useState("");
+
+  //Team info
+  const [title, setTitle] = useState("")
+  const [color, setColor] = useState("")
 
   //Desestructuracion
   const {registerCollab} = props
@@ -59,6 +64,24 @@ const Form = (props) => {
         />
         <Button>
           Crear
+        </Button>
+      </form>
+      <form onSubmit={handleSubmit} >
+        <h2>Rellena el formulario para crear el equipo.</h2>
+        <Input 
+          titulo="Titulo" 
+          required={true} 
+          value ={title} 
+          updateValue = {setTitle} 
+        />
+        <Input 
+          titulo="Color" 
+          required 
+          value ={color} 
+          updateValue = {setColor} 
+        />
+        <Button>
+          Registrar Equipo
         </Button>
       </form>
     </section>

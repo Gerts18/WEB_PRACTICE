@@ -8,7 +8,7 @@ import Team from './components/Team/index.js';
 import Footer from './components/Footer/index.jsx';
 
 function App() {
-  const [displayForm, setDisplayForm] = useState(false);
+  const [displayForm, setDisplayForm] = useState(true);
   const [collaborators, setCollaborators] = useState([
     {
     id: uuidv4(),
@@ -104,6 +104,9 @@ function App() {
     })
     setTeamsList(teamsUpdated)
   }
+
+  //Create team
+  
 
   return (
     <div>
