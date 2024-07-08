@@ -1,12 +1,13 @@
 import React from 'react'
 import './Collaborator.css'
-import { TiDelete } from "react-icons/ti";
+import { TiDelete} from "react-icons/ti";
+import { IoIosHeartEmpty as HeartEmpty, IoIosHeart as HeartFull } from "react-icons/io";
 
 const Collaborator = (props) => {
 
-  const {image, name, occupation, id} = props.data
+  const {image, name, occupation, id, fav} = props.data
 
-  const {color, deleteCollab} = props
+  const {color, deleteCollab, like} = props
 
   const headerColor = {backgroundColor: color }
 
@@ -19,6 +20,7 @@ const Collaborator = (props) => {
       <div className='info'>
         <h4>{name}</h4>
         <h5>{occupation}</h5>
+        {fav ? <HeartFull color='red' onClick={()=> like(id)}/> : <HeartEmpty onClick={()=> like(id)}/> }
       </div>
     </div>
   )

@@ -4,8 +4,8 @@ import hexToRgba from 'hex-to-rgba';
 
 const Team = (props) => {
     //Desesctructuracion
-    const {title, secondaryColor, primaryColor, id} = props.data;
-    const {collaborators, deleteCollab, updateColor} = props
+    const {title, primaryColor, id} = props.data;
+    const {collaborators, deleteCollab, updateColor, like} = props
 
     const titleStyle = {borderColor: primaryColor}
 
@@ -33,6 +33,7 @@ const Team = (props) => {
                         key={index} 
                         color = {primaryColor}
                         deleteCollab = {deleteCollab}
+                        like = {like}
                     /> )
                 }
             </div>
