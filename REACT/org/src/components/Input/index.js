@@ -2,22 +2,24 @@ import {React, useState} from 'react';
 import './Input.css';
 
 function Input(props) {
-  //console.log('Datos:', props)
-
   //const [value, setValue] = useState("");
+
+  //Desestructuracion 
+  const {titulo, required, value, type = 'text'} = props
 
   const handleValue = (event) => {
     props.updateValue(event.target.value);
   }
 
   return (
-    <div className='text-input'>
-      <label>{props.titulo} </label>
+    <div className={`input ${type}-input`}>
+      <label>{titulo} </label>
       <input 
-        placeholder={`Ingresa tu ${props.titulo.toLowerCase()}`} 
-        required={props.required} 
-        value={props.value} 
+        placeholder={`Ingresa tu ${titulo.toLowerCase()}`} 
+        required={required} 
+        value={value} 
         onChange={handleValue}
+        type={type}
       />
     </div>
   )
