@@ -1,11 +1,11 @@
 .form{
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     margin: 80px 0;
 }
 
 .form form {
-    max-width: 80%;
+    max-width: 30%;
     background-color: #f6f6f6;
     box-shadow: 7px 7px 15px 0px rgba(0, 0, 0, 0.08);
     border-radius: 20px;

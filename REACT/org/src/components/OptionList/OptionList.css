@@ -15,3 +15,10 @@
     outline-color: #6278F7 ;
     font-size: 16px;
 }
+
+select :first-child{
+    color: #AFAFAF;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 400;
+}

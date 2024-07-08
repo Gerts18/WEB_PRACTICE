@@ -1,26 +1,98 @@
-import React from 'react';
+import {React, useState} from 'react';
 import './Form.css';
 import Input from '../Input';
 import OptionList from '../OptionList';
 import Button from '../Button';
 
-const Form = () => {
+const Form = (props) => {
+
+  //Collaborator info
+  const [name, setName] = useState("");
+  const [occupation, setOcupation] = useState("");
+  const [image, setImage] = useState("");
+  const [team, setTeam] = useState("");
+
+  //Team info
+  const [title, setTitle] = useState("")
+  const [color, setColor] = useState("")
+
+  //Desestructuracion
+  const {registerCollab, createTeam } = props
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    //console.log('Handling submit', event)
+    let data = {
+      name,
+      occupation,
+      image,
+      team
+    }
+    registerCollab(data)
+    setName("")
+    setOcupation("")
+    setImage("")
+    setTeam("")
+  }
+
+  const handleSubmitTeam = (event) => {
+    event.preventDefault();
+    let data = {
+      title,
+      primaryColor: color
+    }
+    createTeam(data)
+    setColor("")
+    setTitle("")
   }
 
   return (
     <section className='form'>
       <form onSubmit={handleSubmit} >
         <h2>Rellena el formulario para crear el colaborador.</h2>
-        <Input titulo="Nombre" required={true} />
-        <Input titulo="Puesto" required />
-        <Input titulo="Foto" required />
-        <OptionList/>
+        <Input 
+          titulo="Nombre" 
+          required={true} 
+          value ={name} 
+          updateValue = {setName} 
+        />
+        <Input 
+          titulo="Puesto" 
+          required 
+          value ={occupation} 
+          updateValue = {setOcupation} 
+        />
+        <Input  
+          titulo="Foto" 
+          required 
+          value ={image} 
+          updateValue = {setImage} 
+        />
+        <OptionList
+          teams = {props.teams}
+          value = {team}
+          updateValue = {setTeam}
+          required
+        />
         <Button>
           Crear
+        </Button>
+      </form>
+      <form onSubmit={handleSubmitTeam} >
+        <h2>Rellena el formulario para crear el equipo.</h2>
+        <Input 
+          titulo="Titulo" 
+          required={true} 
+          value ={title} 
+          updateValue = {setTitle} 
+        />
+        <Input 
+          titulo="Color" 
+          required 
+          value ={color} 
+          updateValue = {setColor} 
+        />
+        <Button>
+          Registrar Equipo
         </Button>
       </form>
     </section>
