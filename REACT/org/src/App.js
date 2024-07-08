@@ -4,6 +4,7 @@ import Form from './components/Form/Form.js';
 import Header from './components/Header/Header.jsx';
 import MiOrg from './components/MiOrg/index.js';
 import Team from './components/Team/index.js';
+import Footer from './components/Footer/index.jsx';
 
 function App() {
 
@@ -11,7 +12,7 @@ function App() {
   // Corto circuito --> condicion && true
 
   const [displayForm, setDisplayForm] = useState(false);
-  const [collaborators, setCollaborators] = useState([]);
+  const [collaborators, setCollaborators] = useState([{name:"German Torres", image:"https://github.com/Gerts18.png", team:"Programacion", occupation:"Lead Programmer"}]);
 
   const teamsList = [
     {
@@ -77,6 +78,8 @@ function App() {
          />
         )
       } 
+
+      <Footer/>
     </div>
   )
 }
