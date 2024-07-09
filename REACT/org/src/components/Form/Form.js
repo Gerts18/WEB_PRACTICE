@@ -90,6 +90,7 @@ const Form = (props) => {
           required 
           value ={color} 
           updateValue = {setColor} 
+          type = 'color'
         />
         <Button>
           Registrar Equipo

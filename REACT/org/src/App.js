@@ -8,28 +8,31 @@ import Team from './components/Team/index.js';
 import Footer from './components/Footer/index.jsx';
 
 function App() {
-  const [displayForm, setDisplayForm] = useState(true);
+  const [displayForm, setDisplayForm] = useState(false);
   const [collaborators, setCollaborators] = useState([
     {
     id: uuidv4(),
     name:"German Torres", 
     image:"https://github.com/Gerts18.png", 
     team:"Programacion", 
-    occupation:"Lead Programmer"
+    occupation:"Lead Programmer",
+    fav: true
     },
     {
       id: uuidv4(),
       name:"Eddy", 
       image:"https://github.com/eddy3o.png", 
       team:"Front End", 
-      occupation:"Sr Programmer"
+      occupation:"Sr Programmer",
+      fav: false 
     },
     {
       id: uuidv4(),
       name:"Andre", 
       image:"https://github.com/Andreexd.png", 
       team:"Programacion", 
-      occupation:"Jr programmer"
+      occupation:"Jr programmer",
+      fav: false 
     }
   ]);
   //List of teams available
@@ -105,6 +108,17 @@ function App() {
     setTeamsList(teamsUpdated)
   }
 
+  //Mark a collaborator as a favorite
+  const like = (id) => {
+    const collaboratorsUpdated = collaborators.map((collaborator) => {
+      if(collaborator.id === id){
+        collaborator.fav = !collaborator.fav 
+      }
+      return collaborator
+    })
+    setCollaborators(collaboratorsUpdated)
+  }
+
   //Create team
   const createTeam = (newTeam) => {
     setTeamsList([...teamsList, {...newTeam, id: uuidv4() } ])
@@ -130,6 +144,7 @@ function App() {
           collaborators = {collaborators.filter(collaborator => collaborator.team === team.title)}
           deleteCollab = {deleteCollaborator}
           updateColor = {updateColor}
+          like = {like}
          />
         )
       } 
