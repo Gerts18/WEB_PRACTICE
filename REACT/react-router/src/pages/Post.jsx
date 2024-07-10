@@ -12,7 +12,7 @@ const Post = ({url}) => {
     const navigate = useNavigate()
 
     useEffect(() => {
-        buscar(`/posts/${id}`, setPost).catch((error) => {
+        buscar(`/posts/${id}`, setPost).catch(() => {
             navigate("/not-found")
         })
     }, [id] )
