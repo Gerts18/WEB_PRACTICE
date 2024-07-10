@@ -1,5 +1,6 @@
 import './assets/css/base/base.css';
 import './assets/css/componentes/card.css'
+import Header from './components/Header.jsx';
 import Home from './pages/Home.jsx'
 import Page404 from './pages/Page404.jsx';
 import Sobre from './pages/Sobre.jsx'
@@ -11,6 +12,7 @@ function App() {
   
   return (
     <Router>
+      <Header/>
       <Routes>
         <Route path='/' element={<Home/>}/>
         <Route path='/sobre' element={<Sobre/>} />
