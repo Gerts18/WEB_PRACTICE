@@ -3,6 +3,7 @@ import GlobalStyles from './components/GlobalStyles'
 import Header from './components/Header'
 import Sidebar from './components/Sidebar'
 import Banner from './components/Banner'
+import Gallery from './components/Gallery'
 
 const FondoGradiente = styled.div`
   background: linear-gradient(175deg, #041833 4.16%, #04244F 48%, #154580 96.76%);
@@ -23,6 +24,13 @@ const MainContainer = styled.main`
 
 `
 
+const ContenidoGaleria = styled.section`
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+`
+
+
 function App() {
 
   return (
@@ -31,11 +39,15 @@ function App() {
         <GlobalStyles />
 
         <AppContainer>
-        <Header />
+          <Header />
 
           <MainContainer>
             <Sidebar />
-            <Banner />
+            <ContenidoGaleria>
+              <Banner />
+              <Gallery />
+            </ContenidoGaleria>
+
           </MainContainer>
 
         </AppContainer>
