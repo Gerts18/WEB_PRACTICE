@@ -1,21 +1,22 @@
 import styled from "styled-components"
 import Input from "../Input"
+import logo from '/imagenes/logo.png'
 
 const HeaderEstilizado = styled.header`
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 40px 22px;
+`
 
-    img{
-        width: 220px;
-    }
+const Logo = styled.img`
+    width: 220px;
 `
 
 const Header = () => {
   return (
      <HeaderEstilizado>
-        <img src="imagenes/logo.png" alt="logo de Space App" />
+        <Logo src={logo} alt="logo de Space App" />
         <Input/>
      </HeaderEstilizado>
   )

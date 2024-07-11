@@ -4,10 +4,6 @@ import search from '/imagenes/search.png'
 const ContainerEstilizado  = styled.div`
     position: relative;
     display: inline-block;
-
-    img{
-        width: 38px;
-    }
 `
 
 const InputEstilizado = styled.input`
@@ -29,6 +25,8 @@ const IconoLupa = styled.img`
     position: absolute;
     top: 10px;
     right: 10px;
+    width: 38px;
+    height: 38px;
 `
 
 const Input = () => {
