@@ -19,9 +19,9 @@ const ItemEstilizado = styled.li`
 
 `
 
-const NavigationItem = ({children, iconoActivo, iconoInactivo, activo, change}) => {
+const NavigationItem = ({children, iconoActivo, iconoInactivo, activo, change, id}) => {
   return (
-    <ItemEstilizado $activo={activo} onClick={change}>
+    <ItemEstilizado $activo={activo} onClick={() => change(id)}>
         <img src={activo ? iconoActivo : iconoInactivo} alt="" />
         {children}
     </ItemEstilizado>
