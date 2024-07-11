@@ -3,7 +3,7 @@ import NavigationItem from "./NavigationItem"
 import { useState } from "react"
 
 const ListalEstilizada = styled.ul`
-    margin-left:24px;
+    margin: 0;
     padding: 0;
     list-style: none;
 `

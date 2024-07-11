@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import banner from './Banner.png'
+import banner from '../../assets/banner.png'
 
 
 const FigureEstilizada  = styled.figure`

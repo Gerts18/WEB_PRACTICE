@@ -11,15 +11,35 @@ const FondoGradiente = styled.div`
 
 `
 
+const AppContainer = styled.div`
+  width: 1440px;
+  max-width: 100%;
+  margin: 0 auto;
+`
+
+const MainContainer = styled.main`
+  display: flex;
+  gap: 24px;
+
+`
+
 function App() {
- 
+
   return (
     <>
       <FondoGradiente>
-        <GlobalStyles/>
-        <Header/>
-        <Sidebar/>
-        <Banner/>
+        <GlobalStyles />
+
+        <AppContainer>
+        <Header />
+
+          <MainContainer>
+            <Sidebar />
+            <Banner />
+          </MainContainer>
+
+        </AppContainer>
+
       </FondoGradiente>
     </>
   )
