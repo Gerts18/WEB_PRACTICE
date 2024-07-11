@@ -14,7 +14,7 @@ const Container = styled.div`
 const BotonEstilizado = styled.button`
   padding: 10px 8px;
   border-radius: 10px;
-  border: ${props => props.$active ? "2px solid#C98CF1" : "none" };
+  border: ${props => props.$active ? "2px solid#C98CF1" : "3px solid transparent" };
   background: rgba(217, 217, 217, 0.30);
   color: #FFF;
   text-align: center;
@@ -22,15 +22,19 @@ const BotonEstilizado = styled.button`
   font-weight: 400;
   max-height: 52px;
   max-width: 117px;
-
   cursor: pointer;
+  box-sizing: border-box;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+      border-color: #7B78E5;
+  }
 `
 
 const ParrafoEstilizado = styled.p`
   color: #D9D9D9;
   font-size: 24px;
-  font-style: normal;
-  font-weight: 400;
+  margin: 0;
 `
 
 const Tag = () => {
