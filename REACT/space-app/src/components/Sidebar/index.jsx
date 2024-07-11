@@ -2,7 +2,7 @@ import styled from "styled-components"
 import NavigationItem from "./NavigationItem"
 
 const ListalEstilizada = styled.ul`
-    margin: 0;
+    margin-left:24px;
     padding: 0;
     list-style: none;
 `
