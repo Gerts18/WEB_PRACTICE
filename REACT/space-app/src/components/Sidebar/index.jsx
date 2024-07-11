@@ -1,5 +1,6 @@
 import styled from "styled-components"
 import NavigationItem from "./NavigationItem"
+import { useState } from "react"
 
 const ListalEstilizada = styled.ul`
     margin-left:24px;
@@ -8,14 +9,21 @@ const ListalEstilizada = styled.ul`
 `
 
 const Sidebar = () => {
+
+    const [iconoActivo, setIconoActivo] = useState(true)
+
+    const handleActive = () => {
+        setIconoActivo(!iconoActivo)
+    }
+
     return (
         <aside>
             <nav>
                 <ListalEstilizada>
-                    <NavigationItem iconoActivo="iconos/home-activo.png" iconoInactivo="iconos/home-inactivo.png" activo>
+                    <NavigationItem iconoActivo="iconos/home-activo.png" iconoInactivo="iconos/home-inactivo.png" activo={iconoActivo} change={handleActive} >
                         Inicio
                     </NavigationItem>
-                    <NavigationItem iconoActivo="iconos/mas-vistas-activo.png" iconoInactivo="iconos/mas-vistas-inactivo.png"  >
+                    <NavigationItem iconoActivo="iconos/mas-vistas-activo.png" iconoInactivo="iconos/mas-vistas-inactivo.png" activo={!iconoActivo} change={handleActive} >
                         Más visitados
                     </NavigationItem>
                 </ListalEstilizada>

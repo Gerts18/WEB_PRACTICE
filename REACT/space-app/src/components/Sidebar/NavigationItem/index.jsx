@@ -9,16 +9,19 @@ const ItemEstilizado = styled.li`
     gap: 16px;
     color: ${props => props.$activo ? "#7B78E5" : "#D9D9D9"} ;
     font-family: ${props => props.$activo ? "GandhiSansBold" : "GandhiSansRegular"} ;
+    cursor: pointer;
 
     img{
         width: 24px;
         height: 24px;
     }
+
+
 `
 
-const NavigationItem = ({children, iconoActivo, iconoInactivo, activo=false}) => {
+const NavigationItem = ({children, iconoActivo, iconoInactivo, activo, change}) => {
   return (
-    <ItemEstilizado $activo={activo}>
+    <ItemEstilizado $activo={activo} onClick={change}>
         <img src={activo ? iconoActivo : iconoInactivo} alt="" />
         {children}
     </ItemEstilizado>
