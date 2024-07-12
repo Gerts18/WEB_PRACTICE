@@ -1,9 +1,10 @@
 import styled from "styled-components"
 import favActivo from '../../../../public/iconos/favorito.png'
 import expandir from '../../../../public/iconos/expandir.png'
+import Button from "../../Button"
 
 const Contenedor = styled.figure`
-  width: ${props => props.$expandida ? "90%" : '460px'};
+  width: ${props => props.$expandida ? "100%" : '460px'};
   max-width: 100%;
   margin: 0;
   display: flex;
@@ -11,6 +12,7 @@ const Contenedor = styled.figure`
 
   & > img{
     max-width: 100%;
+    max-height: 100%;
     border-radius: 20px 20px 0 0;
   }
 
@@ -43,22 +45,13 @@ const SubContenedor = styled.div`
   gap: 24px;
   align-items: center;
 `
-const BotonEstilizado = styled.button`
-  background: none;
-  border: none;
-  cursor: pointer;
 
-  & > img {
-    width: 22px;
-    height: 22px;
-  }
-`
 
 const ImageCard = (props) => {
 
-  const { titulo, fuente, path, id, tagId, expandida = false} = props.foto
+  const { titulo, fuente, path, id, tagId} = props.foto
 
-  const {solicitarZoom} = props
+  const {solicitarZoom, expandida = false } = props
 
   return (
     <Contenedor $expandida = {expandida} >
@@ -71,15 +64,15 @@ const ImageCard = (props) => {
           <h3>{fuente} </h3>
 
           <SubContenedor>
-            <BotonEstilizado>
+            <Button>
               <img src={favActivo} />
-            </BotonEstilizado>
+            </Button>
 
             {
               !expandida && 
-              <BotonEstilizado onClick={() => solicitarZoom(props.foto)} >
+              <Button onClick={() => solicitarZoom(props.foto)} >
                 <img src={expandir} />
-              </BotonEstilizado>
+              </Button>
             }
 
           </SubContenedor>
