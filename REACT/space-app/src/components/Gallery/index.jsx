@@ -11,7 +11,7 @@ const FluentSection = styled.section`
     flex-grow: 1;
 `
 
-const Gallery = () => {
+const Gallery = ({fotos = []}) => {
     return (
         <>
             <Tag/>
@@ -19,6 +19,9 @@ const Gallery = () => {
 
                 <FluentSection>
                     <Title>Navegue por la Galeria</Title>
+                    {fotos.map( (foto) => {
+                        return <p key={foto.id} > {foto.titulo} </p>
+                    } )}
                 </FluentSection>
 
                 <Popular/>

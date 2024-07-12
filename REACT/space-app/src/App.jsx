@@ -4,6 +4,8 @@ import Header from './components/Header'
 import Sidebar from './components/Sidebar'
 import Banner from './components/Banner'
 import Gallery from './components/Gallery'
+import photos from './fotos.json'
+import { useState } from 'react'
 
 const FondoGradiente = styled.div`
   background: linear-gradient(175deg, #041833 4.16%, #04244F 48%, #154580 96.76%);
@@ -31,7 +33,9 @@ const ContenidoGaleria = styled.section`
 `
 
 
-function App() {
+const App = () => {
+
+  const [fotosGaleria, setFotosGaleria] = useState(photos)
 
   return (
     <>
@@ -45,7 +49,7 @@ function App() {
             <Sidebar />
             <ContenidoGaleria>
               <Banner />
-              <Gallery />
+              <Gallery fotos = {fotosGaleria} />
             </ContenidoGaleria>
           </MainContainer>
 
