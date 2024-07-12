@@ -1,5 +1,6 @@
 import styled from "styled-components"
-import favActivo from '../../../../public/iconos/favorito.png'
+import fav from '../../../../public/iconos/favorito.png'
+import favActivo from '../../../../public/iconos/favorito-activo.png'
 import expandir from '../../../../public/iconos/expandir.png'
 import Button from "../../Button"
 
@@ -51,7 +52,9 @@ const ImageCard = (props) => {
 
   const { titulo, fuente, path, id, tagId} = props.foto
 
-  const {solicitarZoom, expandida = false, marcarFavoito } = props
+  const {solicitarZoom, expandida = false, marcarFavorito } = props
+
+  const iconoFavorito = props.foto.favorita ? favActivo : fav
 
   return (
     <Contenedor $expandida = {expandida} >
@@ -64,8 +67,8 @@ const ImageCard = (props) => {
           <h3>{fuente} </h3>
 
           <SubContenedor>
-            <Button onClick={() => marcarFavoito(props.foto)} >
-              <img src={favActivo} />
+            <Button onClick={() => marcarFavorito(props.foto)} >
+              <img src={iconoFavorito} />
             </Button>
 
             {

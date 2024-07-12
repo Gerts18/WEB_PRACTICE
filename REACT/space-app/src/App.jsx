@@ -41,7 +41,12 @@ const App = () => {
   const [fotoSeleccionada, setFotoSeleccionada] = useState(null)
 
   const handleFavorite = (foto) => {
-    console.log(foto)
+    setFotosGaleria(fotosGaleria.map( fotoGaleria => {
+      return { 
+        ...fotoGaleria,
+        favorita: fotoGaleria.id === foto.id ? !foto.favorita : fotoGaleria.favorita
+       }
+    } ))
   }
 
   return (
@@ -59,7 +64,7 @@ const App = () => {
               <Gallery 
               seleccionarFoto = {foto => setFotoSeleccionada(foto)}  
               fotos = {fotosGaleria} 
-              marcarFavoito = {handleFavorite}
+              marcarFavorito = {handleFavorite}
               />
             </ContenidoGaleria>
           </MainContainer>
