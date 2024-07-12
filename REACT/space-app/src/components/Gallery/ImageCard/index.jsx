@@ -58,6 +58,7 @@ const ImageCard = (props) => {
 
   const { titulo, fuente, path, id, tagId, expandida = false} = props.foto
 
+  const {solicitarZoom} = props
 
   return (
     <Contenedor $expandida = {expandida} >
@@ -76,7 +77,7 @@ const ImageCard = (props) => {
 
             {
               !expandida && 
-              <BotonEstilizado onClick={() => props.solicitarZoom(props.foto)} >
+              <BotonEstilizado onClick={() => solicitarZoom(props.foto)} >
                 <img src={expandir} />
               </BotonEstilizado>
             }
