@@ -2,6 +2,7 @@ import styled from "styled-components"
 import Title from "../Title"
 import Tag from "./Tags"
 import Popular from "./Popular"
+import ImageCard from "./ImageCard"
 
 const GalleryContainer = styled.div`
     display: flex;
@@ -20,7 +21,7 @@ const Gallery = ({fotos = []}) => {
                 <FluentSection>
                     <Title>Navegue por la Galeria</Title>
                     {fotos.map( (foto) => {
-                        return <p key={foto.id} > {foto.titulo} </p>
+                        return <ImageCard key={foto.id} data={foto} />
                     } )}
                 </FluentSection>
 
