@@ -46,6 +46,7 @@ const SubContenedor = styled.div`
 const BotonEstilizado = styled.button`
   background: none;
   border: none;
+  cursor: pointer;
 
   & > img {
     width: 22px;
@@ -55,7 +56,7 @@ const BotonEstilizado = styled.button`
 
 const ImageCard = (props) => {
 
-  const { titulo, fuente, path, id, tagId, expandida } = props.data
+  const { titulo, fuente, path, id, tagId, expandida = false } = props.data
 
   return (
     <Contenedor $expandida = {expandida} >
