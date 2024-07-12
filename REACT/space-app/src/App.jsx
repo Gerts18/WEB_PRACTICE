@@ -38,6 +38,8 @@ const App = () => {
 
   const [fotosGaleria, setFotosGaleria] = useState(photos)
 
+  const [fotoSeleccionada, setFotoSeleccionada] = useState(null)
+
   return (
     <>
       <FondoGradiente>
@@ -50,12 +52,12 @@ const App = () => {
             <Sidebar />
             <ContenidoGaleria>
               <Banner />
-              <Gallery fotos = {fotosGaleria} />
+              <Gallery seleccionarFoto = {foto => setFotoSeleccionada(foto)}  fotos = {fotosGaleria} />
             </ContenidoGaleria>
           </MainContainer>
 
         </AppContainer>
-        <ImageZoom/>
+        <ImageZoom foto= {fotoSeleccionada} />
       </FondoGradiente>
     </>
   )

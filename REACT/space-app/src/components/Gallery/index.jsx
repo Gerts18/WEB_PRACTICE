@@ -19,7 +19,7 @@ const ImagesContainer = styled.section`
     gap: 24px;
 `
 
-const Gallery = ({fotos = []}) => {
+const Gallery = ({fotos = [], seleccionarFoto}) => {
     return (
         <>
             <Tag/>
@@ -29,7 +29,11 @@ const Gallery = ({fotos = []}) => {
                     <Title>Navegue por la Galeria</Title>
                     <ImagesContainer>
                         {fotos.map( (foto) => {
-                            return <ImageCard key={foto.id} data={foto} />
+                            return <ImageCard 
+                                solicitarZoom = {seleccionarFoto}
+                                key={foto.id} 
+                                foto={foto} 
+                            />
                         })}
                     </ImagesContainer>
                 </FluentSection>

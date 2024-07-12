@@ -1,9 +1,12 @@
 
 
-const ImageZoom = () => {
+const ImageZoom = ({foto}) => {
+
+
+
     return (
         <>
-            <dialog open>
+            <dialog open={!!foto} >
                 <p>Greetings, one and all!</p>
                 <form method="dialog">
                     <button>OK</button>

@@ -56,7 +56,8 @@ const BotonEstilizado = styled.button`
 
 const ImageCard = (props) => {
 
-  const { titulo, fuente, path, id, tagId, expandida = false } = props.data
+  const { titulo, fuente, path, id, tagId, expandida = false} = props.foto
+
 
   return (
     <Contenedor $expandida = {expandida} >
@@ -72,9 +73,14 @@ const ImageCard = (props) => {
             <BotonEstilizado>
               <img src={favActivo} />
             </BotonEstilizado>
-            <BotonEstilizado>
-              <img src={expandir} />
-            </BotonEstilizado>
+
+            {
+              !expandida && 
+              <BotonEstilizado onClick={() => props.solicitarZoom(props.foto)} >
+                <img src={expandir} />
+              </BotonEstilizado>
+            }
+
           </SubContenedor>
 
         </SubContenedor>
