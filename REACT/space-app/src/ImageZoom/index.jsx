@@ -33,7 +33,7 @@ const DialogEstilizado = styled.dialog`
     }
 `
 
-const ImageZoom = ({ foto }) => {
+const ImageZoom = ({ foto, alCerrar, marcarFavorito }) => {
 
     return (
         <>
@@ -41,8 +41,8 @@ const ImageZoom = ({ foto }) => {
                 foto &&
                 <>
                     <Overlay />
-                    <DialogEstilizado open={!!foto}>
-                        <ImageCard foto={foto} expandida={true} />
+                    <DialogEstilizado open={!!foto} onClose={alCerrar}>
+                        <ImageCard foto={foto} expandida={true} marcarFavorito={marcarFavorito} />
                         <form method="dialog">
                             <Button>
                                 <img src={Close} />

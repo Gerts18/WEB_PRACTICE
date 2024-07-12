@@ -41,12 +41,20 @@ const App = () => {
   const [fotoSeleccionada, setFotoSeleccionada] = useState(null)
 
   const handleFavorite = (foto) => {
-    setFotosGaleria(fotosGaleria.map( fotoGaleria => {
-      return { 
+
+    if(foto.id === fotoSeleccionada?.id){
+      setFotoSeleccionada({
+        ...fotoSeleccionada,
+        favorita: !foto.favorita
+      })
+    }
+
+    setFotosGaleria(fotosGaleria.map(fotoGaleria => {
+      return {
         ...fotoGaleria,
         favorita: fotoGaleria.id === foto.id ? !foto.favorita : fotoGaleria.favorita
-       }
-    } ))
+      }
+    }))
   }
 
   return (
@@ -61,16 +69,20 @@ const App = () => {
             <Sidebar />
             <ContenidoGaleria>
               <Banner />
-              <Gallery 
-              seleccionarFoto = {foto => setFotoSeleccionada(foto)}  
-              fotos = {fotosGaleria} 
-              marcarFavorito = {handleFavorite}
+              <Gallery
+                seleccionarFoto={foto => setFotoSeleccionada(foto)}
+                fotos={fotosGaleria}
+                marcarFavorito={handleFavorite}
               />
             </ContenidoGaleria>
           </MainContainer>
 
         </AppContainer>
-        <ImageZoom foto= {fotoSeleccionada} />
+        <ImageZoom 
+          foto={fotoSeleccionada} 
+          alCerrar={() => setFotoSeleccionada(null)} 
+          marcarFavorito={handleFavorite} 
+        />
       </FondoGradiente>
     </>
   )
