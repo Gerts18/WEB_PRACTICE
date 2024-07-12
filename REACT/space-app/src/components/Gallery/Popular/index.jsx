@@ -12,7 +12,19 @@ const Container = styled.div`
     height: 158px;
     border-radius: 20px;
   }
+`
 
+const Button = styled.button`
+  background-color: transparent;
+  color: #fff;
+  border: 2px solid;
+  border-color: #C98CF1;
+  padding: 12px 20px;
+  font-size: 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 16px;
 `
 
 
@@ -27,7 +39,7 @@ const Popular = () => {
             } )
           }
         </Container>
-        
+        <Button>Ver más</Button>
     </section>
   )
 }
