@@ -40,6 +40,10 @@ const App = () => {
 
   const [fotoSeleccionada, setFotoSeleccionada] = useState(null)
 
+  const handleFavorite = (foto) => {
+    console.log(foto)
+  }
+
   return (
     <>
       <FondoGradiente>
@@ -52,7 +56,11 @@ const App = () => {
             <Sidebar />
             <ContenidoGaleria>
               <Banner />
-              <Gallery seleccionarFoto = {foto => setFotoSeleccionada(foto)}  fotos = {fotosGaleria} />
+              <Gallery 
+              seleccionarFoto = {foto => setFotoSeleccionada(foto)}  
+              fotos = {fotosGaleria} 
+              marcarFavoito = {handleFavorite}
+              />
             </ContenidoGaleria>
           </MainContainer>
 

@@ -19,7 +19,7 @@ const ImagesContainer = styled.section`
     gap: 24px;
 `
 
-const Gallery = ({fotos = [], seleccionarFoto}) => {
+const Gallery = ({fotos = [], seleccionarFoto, marcarFavoito}) => {
     return (
         <>
             <Tag/>
@@ -33,6 +33,7 @@ const Gallery = ({fotos = [], seleccionarFoto}) => {
                                 solicitarZoom = {seleccionarFoto}
                                 key={foto.id} 
                                 foto={foto} 
+                                marcarFavoito = {marcarFavoito}
                             />
                         })}
                     </ImagesContainer>

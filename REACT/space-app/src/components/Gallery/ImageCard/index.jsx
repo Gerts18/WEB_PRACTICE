@@ -51,7 +51,7 @@ const ImageCard = (props) => {
 
   const { titulo, fuente, path, id, tagId} = props.foto
 
-  const {solicitarZoom, expandida = false } = props
+  const {solicitarZoom, expandida = false, marcarFavoito } = props
 
   return (
     <Contenedor $expandida = {expandida} >
@@ -64,7 +64,7 @@ const ImageCard = (props) => {
           <h3>{fuente} </h3>
 
           <SubContenedor>
-            <Button>
+            <Button onClick={() => marcarFavoito(props.foto)} >
               <img src={favActivo} />
             </Button>
 
