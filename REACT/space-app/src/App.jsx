@@ -6,7 +6,7 @@ import Banner from './components/Banner'
 import Gallery from './components/Gallery'
 import photos from './fotos.json'
 import { useState } from 'react'
-import ImageZoom from './ImageZoom'
+import ImageZoom from './components/ImageZoom'
 
 const FondoGradiente = styled.div`
   background: linear-gradient(175deg, #041833 4.16%, #04244F 48%, #154580 96.76%);
