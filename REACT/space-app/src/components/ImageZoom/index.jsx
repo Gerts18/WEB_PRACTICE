@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import ImageCard from "../Gallery/ImageCard"
 import Button from "../Button"
-import Close from '../../public/iconos/cerrar.png'
+import Close from '../../../public/iconos/cerrar.png'
 import { useState } from "react"
 
 const Overlay = styled.div`

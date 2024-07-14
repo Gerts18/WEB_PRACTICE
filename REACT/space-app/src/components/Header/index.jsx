@@ -13,11 +13,11 @@ const Logo = styled.img`
     width: 220px;
 `
 
-const Header = () => {
+const Header = ({setConsulta}) => {
   return (
      <HeaderEstilizado>
         <Logo src={logo} alt="logo de Space App" />
-        <Input/>
+        <Input setConsulta={setConsulta} />
      </HeaderEstilizado>
   )
 }

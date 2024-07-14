@@ -36,6 +36,8 @@ const ContenidoGaleria = styled.section`
 
 const App = () => {
 
+  const [consulta, setConsulta] = useState('')
+
   const [fotosGaleria, setFotosGaleria] = useState(photos)
 
   const [fotoSeleccionada, setFotoSeleccionada] = useState(null)
@@ -63,11 +65,12 @@ const App = () => {
         <GlobalStyles />
 
         <AppContainer>
-          <Header />
+          <Header setConsulta = {setConsulta} />
 
           <MainContainer>
             <Sidebar />
             <ContenidoGaleria>
+              <p>El estado actual de la consulta es: {consulta} </p>
               <Banner />
               <Gallery
                 seleccionarFoto={foto => setFotoSeleccionada(foto)}

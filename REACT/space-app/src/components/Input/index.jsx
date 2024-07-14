@@ -29,10 +29,14 @@ const IconoLupa = styled.img`
     height: 38px;
 `
 
-const Input = () => {
+const Input = ({setConsulta}) => {
   return (
     <ContainerEstilizado>
-        <InputEstilizado type="text" placeholder="¿Qué estas buscando?" />
+        <InputEstilizado 
+          type="text" 
+          placeholder="¿Qué estas buscando?" 
+          onChange={(e) => {setConsulta(e.target.value)}} 
+        />
         <IconoLupa src={search} alt="icono de busqueda" />
     </ContainerEstilizado>
   )
