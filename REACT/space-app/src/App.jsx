@@ -36,8 +36,6 @@ const ContenidoGaleria = styled.section`
 
 const App = () => {
 
-  const [consulta, setConsulta] = useState('')
-
   const [fotosGaleria, setFotosGaleria] = useState([])
 
   const [fotoSeleccionada, setFotoSeleccionada] = useState(null)
