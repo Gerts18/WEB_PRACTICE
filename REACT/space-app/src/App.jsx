@@ -70,12 +70,12 @@ const App = () => {
           <MainContainer>
             <Sidebar />
             <ContenidoGaleria>
-              <p>El estado actual de la consulta es: {consulta} </p>
               <Banner />
               <Gallery
                 seleccionarFoto={foto => setFotoSeleccionada(foto)}
                 fotos={fotosGaleria}
                 marcarFavorito={handleFavorite}
+                consulta = {consulta}
               />
             </ContenidoGaleria>
           </MainContainer>

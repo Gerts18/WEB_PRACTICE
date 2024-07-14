@@ -18,7 +18,7 @@ const InputEstilizado = styled.input`
     font-size: 20px;
     line-height: 20px;
     outline: none;
-
+    color: white;
 `
 
 const IconoLupa = styled.img`
