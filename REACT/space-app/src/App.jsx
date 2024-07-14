@@ -66,7 +66,7 @@ const App = () => {
       setFotosGaleria([...data]);
     }
 
-    getData();
+    setTimeout(() => getData(), 5000)
 
   }, [])
   
