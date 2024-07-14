@@ -3,7 +3,8 @@ import Title from "../Title"
 import Tag from "./Tags"
 import Popular from "./Popular"
 import ImageCard from "./ImageCard"
-import Title from "../Title"
+import { useContext } from "react"
+import { GlobalContext } from "../../context/GlobalContext"
 
 const GalleryContainer = styled.div`
     display: flex;
@@ -20,9 +21,12 @@ const ImagesContainer = styled.section`
     gap: 24px;
 `
 
-const Gallery = ({fotos = [], seleccionarFoto, marcarFavorito, consulta}) => {
-    fotosGaleria.length == 0 ? <Title>Cargando ...</Title> :
+const Gallery = () => {
+
+    const {fotosGaleria, setFotoSeleccionada, consulta, handleFavorite } = useContext(GlobalContext)
+
     return (
+        fotosGaleria.length == 0 ? <Title>Cargando ...</Title> :
         <>
             <Tag/>
             <GalleryContainer>
@@ -30,17 +34,17 @@ const Gallery = ({fotos = [], seleccionarFoto, marcarFavorito, consulta}) => {
                 <FluentSection>
                     <Title>Navegue por la Galeria</Title>
                     <ImagesContainer>
-                        {fotos.filter(foto => {
+                        {fotosGaleria.filter(foto => {
                             return consulta == '' || 
                             foto.titulo.toLocaleLowerCase().normalize("NFD").replace(/\p{Diacritic}/gu, "").
                             includes(consulta.toLocaleLowerCase().normalize("NFD").replace(/\p{Diacritic}/gu, ""))
                         }).
                             map( (foto) => {
                             return <ImageCard 
-                                solicitarZoom = {seleccionarFoto}
+                                solicitarZoom = {foto => setFotoSeleccionada(foto)}
                                 key={foto.id} 
                                 foto={foto} 
-                                marcarFavorito = {marcarFavorito}
+                                marcarFavorito = {handleFavorite}
                             />
                         })}
                     </ImagesContainer>

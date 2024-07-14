@@ -2,7 +2,8 @@ import styled from "styled-components"
 import ImageCard from "../Gallery/ImageCard"
 import Button from "../Button"
 import Close from '../../../public/iconos/cerrar.png'
-import { useState } from "react"
+import { useState, useContext } from "react"
+import { GlobalContext } from "../../context/GlobalContext"
 
 const Overlay = styled.div`
     background-color: rgba(0, 0, 0, 0.7);
@@ -33,16 +34,18 @@ const DialogEstilizado = styled.dialog`
     }
 `
 
-const ImageZoom = ({ foto, alCerrar, marcarFavorito }) => {
+const ImageZoom = () => {
+
+    const { handleFavorite, setFotoSeleccionada, fotoSeleccionada } = useContext(GlobalContext)
 
     return (
         <>
             {
-                foto &&
+                fotoSeleccionada &&
                 <>
                     <Overlay />
-                    <DialogEstilizado open={!!foto} onClose={alCerrar}>
-                        <ImageCard foto={foto} expandida={true} marcarFavorito={marcarFavorito} />
+                    <DialogEstilizado open={!!fotoSeleccionada} onClose={() => setFotoSeleccionada(null)}>
+                        <ImageCard foto={fotoSeleccionada} expandida={true} marcarFavorito={handleFavorite} />
                         <form method="dialog">
                             <Button>
                                 <img src={Close} />

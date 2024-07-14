@@ -1,11 +1,12 @@
-import { createContext } from "react";
+import { createContext, useEffect, useState } from "react";
+import React from "react";
 
 //Create context
-const GlobalContext = createContext();
+export const GlobalContext = createContext();
 
 //Share context, create a component to spread my context 
 
-const GlobalContextProvider = ({ childern }) => {
+const GlobalContextProvider = ({ children }) => {
 
     const [consulta, setConsulta] = useState('');
     const [fotosGaleria, setFotosGaleria] = useState([])
@@ -37,13 +38,14 @@ const GlobalContextProvider = ({ childern }) => {
           }
         }))
       }
+      
     return (
         <GlobalContext.Provider 
         value={{
             consulta, setConsulta, fotosGaleria, setFotosGaleria, fotoSeleccionada, setFotoSeleccionada,handleFavorite
             }} 
         >
-            {childern}
+            {children}
         </GlobalContext.Provider>
     )
 }

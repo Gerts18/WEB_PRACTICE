@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import { useEffect, useState } from 'react'
 import GlobalStyles from './components/GlobalStyles'
 import Header from './components/Header'
 import Sidebar from './components/Sidebar'
