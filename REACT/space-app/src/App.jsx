@@ -4,9 +4,9 @@ import Header from './components/Header'
 import Sidebar from './components/Sidebar'
 import Banner from './components/Banner'
 import Gallery from './components/Gallery'
-import photos from './fotos.json'
 import { useEffect, useState } from 'react'
 import ImageZoom from './components/ImageZoom'
+import Title from './components/Title'
 
 const FondoGradiente = styled.div`
   background: linear-gradient(175deg, #041833 4.16%, #04244F 48%, #154580 96.76%);
@@ -38,7 +38,7 @@ const App = () => {
 
   const [consulta, setConsulta] = useState('')
 
-  const [fotosGaleria, setFotosGaleria] = useState(photos)
+  const [fotosGaleria, setFotosGaleria] = useState([])
 
   const [fotoSeleccionada, setFotoSeleccionada] = useState(null)
 
@@ -60,14 +60,16 @@ const App = () => {
   }
 
   useEffect(() => {
-    first
-  
-    return () => {
-      second
+    const getData = async () => {
+      const result = await fetch('http://localhost:3000/fotos');
+      const data = await result.json();
+      setFotosGaleria([...data]);
     }
-  }, [third])
-  
 
+    getData();
+
+  }, [])
+  
 
   return (
     <>
@@ -81,12 +83,15 @@ const App = () => {
             <Sidebar />
             <ContenidoGaleria>
               <Banner />
-              <Gallery
+              {
+                fotosGaleria.length == 0 ? <Title>Cargando ...</Title> :
+                <Gallery
                 seleccionarFoto={foto => setFotoSeleccionada(foto)}
                 fotos={fotosGaleria}
                 marcarFavorito={handleFavorite}
                 consulta = {consulta}
               />
+              }
             </ContenidoGaleria>
           </MainContainer>
 
