@@ -5,7 +5,7 @@ import Sidebar from './components/Sidebar'
 import Banner from './components/Banner'
 import Gallery from './components/Gallery'
 import photos from './fotos.json'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import ImageZoom from './components/ImageZoom'
 
 const FondoGradiente = styled.div`
@@ -58,6 +58,16 @@ const App = () => {
       }
     }))
   }
+
+  useEffect(() => {
+    first
+  
+    return () => {
+      second
+    }
+  }, [third])
+  
+
 
   return (
     <>
