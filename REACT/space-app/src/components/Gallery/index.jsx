@@ -3,6 +3,7 @@ import Title from "../Title"
 import Tag from "./Tags"
 import Popular from "./Popular"
 import ImageCard from "./ImageCard"
+import Title from "../Title"
 
 const GalleryContainer = styled.div`
     display: flex;
@@ -20,6 +21,7 @@ const ImagesContainer = styled.section`
 `
 
 const Gallery = ({fotos = [], seleccionarFoto, marcarFavorito, consulta}) => {
+    fotosGaleria.length == 0 ? <Title>Cargando ...</Title> :
     return (
         <>
             <Tag/>
