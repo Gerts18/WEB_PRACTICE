@@ -29,7 +29,9 @@ const Gallery = ({fotos = [], seleccionarFoto, marcarFavorito, consulta}) => {
                     <Title>Navegue por la Galeria</Title>
                     <ImagesContainer>
                         {fotos.filter(foto => {
-                            return consulta == '' || foto.titulo.toLowerCase().includes(consulta.toLowerCase())
+                            return consulta == '' || 
+                            foto.titulo.toLocaleLowerCase().normalize("NFD").replace(/\p{Diacritic}/gu, "").
+                            includes(consulta.toLocaleLowerCase().normalize("NFD").replace(/\p{Diacritic}/gu, ""))
                         }).
                             map( (foto) => {
                             return <ImageCard 
