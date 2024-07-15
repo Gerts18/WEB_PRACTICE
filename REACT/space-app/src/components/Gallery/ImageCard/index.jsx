@@ -71,13 +71,13 @@ const ImageCard = (props) => {
           <h3>{fuente} </h3>
 
           <SubContenedor>
-            <Button onClick={() => dispatch({type: 'ALTERNAR_FAVORITO', payload: foto})} >
+            <Button onClick={() => dispatch({type: 'ALTERNAR_FAVORITO', payload: props.foto})} >
               <img src={iconoFavorito} />
             </Button>
 
             {
               !expandida && 
-              <Button onClick={() => dispatch({type: 'SET_FOTO_SELECCIONADA', payload: foto})} >
+              <Button onClick={() => dispatch({type: 'SET_FOTO_SELECCIONADA', payload: props.foto})} >
                 <img src={expandir} />
               </Button>
             }
