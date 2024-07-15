@@ -13,13 +13,23 @@ const initialState = {
 const reducer = (state, action )=> {
   switch (action.type){
     case 'SET_CONSULTA':
-      return;
+      return {...state, consulta: action.playload};
     case 'SET_FOTOS_DE_GALERIA':
-      return;
+      return {...state, fotosGaleria: action.playload};
     case 'SET_FOTO_SELECCIONADA':
-      return;
+      return {...state, fotoSeleccionada: action.playload};
     case 'ALTERNAR_FAVORITO':
-      return
+      return {...state,
+        fotosGaleria: fotosGaleria.map(fotoGaleria => {
+          return {
+            ...fotoGaleria,
+            favorita: fotoGaleria.id === foto.id ? !foto.favorita : fotoGaleria.favorita
+          }
+        }),
+        fotoSeleccionada:{
+          ...state.fotoSeleccionada, favorita: !foto.favorita
+        }
+      }
     default:
       return state;
   }
@@ -39,41 +49,16 @@ const GlobalContextProvider = ({ children }) => {
     const getData = async () => {
       const result = await fetch('http://localhost:3000/fotos');
       const data = await result.json();
-      setFotosGaleria([...data]);
+      //setFotosGaleria([...data]);
+      dispatch({type: 'SET_FOTOS_DE_GALERIA', payload: data})
     }
 
     setTimeout(() => getData(), 5000)
 
-  }, [])
-
-  const handleFavorite = (foto) => {
-    if (foto.id === fotoSeleccionada?.id) {
-      setFotoSeleccionada({
-        ...fotoSeleccionada,
-        favorita: !foto.favorita
-      })
-    }
-
-    setFotosGaleria(fotosGaleria.map(fotoGaleria => {
-      return {
-        ...fotoGaleria,
-        favorita: fotoGaleria.id === foto.id ? !foto.favorita : fotoGaleria.favorita
-      }
-    }))
-  }
-
-  const globalState = {
-    consulta,
-    setConsulta,
-    fotosGaleria,
-    setFotosGaleria,
-    fotoSeleccionada,
-    setFotoSeleccionada,
-    handleFavorite
-  }
+  }, []);
 
   return (
-    <GlobalContext.Provider value={globalState}>
+    <GlobalContext.Provider value={{state, dispatch}}>
       {children}
     </GlobalContext.Provider>
   )
