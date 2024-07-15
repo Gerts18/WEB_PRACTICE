@@ -7,7 +7,8 @@ const initialState = {
   consulta: '',
   fotosGaleria: [],
   fotoSeleccionada: null,
-  loading: true
+  loading: true,
+  modalAbierto: false
 };
 
 const reducer = (state, action) => {

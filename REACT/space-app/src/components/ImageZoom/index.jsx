@@ -46,7 +46,7 @@ const ImageZoom = () => {
                 state.fotoSeleccionada &&
                 <>
                     <Overlay />
-                    <DialogEstilizado open={!!state.fotoSeleccionada} onClose={() => dispatch({type: 'SET_FOTO_SELECCIONADA', payload: null})}>
+                    <DialogEstilizado open={!!state.fotoSeleccionada} onClose={() => /* Custom hook */}>
                         <ImageCard foto={state.fotoSeleccionada} expandida={true}/>
                         <form method="dialog">
                             <Button>

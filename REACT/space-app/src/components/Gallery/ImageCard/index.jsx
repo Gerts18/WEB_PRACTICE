@@ -77,7 +77,7 @@ const ImageCard = (props) => {
 
             {
               !expandida && 
-              <Button onClick={() => dispatch({type: 'SET_FOTO_SELECCIONADA', payload: props.foto})} >
+              <Button onClick={() => /* Custom hook */} >
                 <img src={expandir} />
               </Button>
             }
