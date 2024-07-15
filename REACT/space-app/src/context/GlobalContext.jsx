@@ -1,53 +1,82 @@
-import { createContext, useEffect, useState } from "react";
-import React from "react";
+import { createContext, useEffect, useReducer, useState } from "react";
 
 //Create context
 export const GlobalContext = createContext();
 
-//Share context, create a component to spread my context 
 
+const initialState = {
+  consulta : '',
+  fotosGaleria : [],
+  fotoSeleccionada: null
+}
+
+const reducer = (state, action )=> {
+  switch (action.type){
+    case 'SET_CONSULTA':
+      return;
+    case 'SET_FOTOS_DE_GALERIA':
+      return;
+    case 'SET_FOTO_SELECCIONADA':
+      return;
+    case 'ALTERNAR_FAVORITO':
+      return
+    default:
+      return state;
+  }
+  
+}
+
+//Share context, create a component to spread my context 
 const GlobalContextProvider = ({ children }) => {
 
-    const [consulta, setConsulta] = useState('');
-    const [fotosGaleria, setFotosGaleria] = useState([])
-    const [fotoSeleccionada, setFotoSeleccionada] = useState(null)
+  const [state, dispatch] = useReducer(reducer, initialState);
 
-    useEffect(() => {
-        const getData = async () => {
-          const result = await fetch('http://localhost:3000/fotos');
-          const data = await result.json();
-          setFotosGaleria([...data]);
-        }
-    
-        setTimeout(() => getData(), 5000)
-    
-      }, [])
+  //const [consulta, setConsulta] = useState('');
+  //const [fotosGaleria, setFotosGaleria] = useState([])
+  //const [fotoSeleccionada, setFotoSeleccionada] = useState(null)
 
-      const handleFavorite = (foto) => {
-        if(foto.id === fotoSeleccionada?.id){
-          setFotoSeleccionada({
-            ...fotoSeleccionada,
-            favorita: !foto.favorita
-          })
-        }
+  useEffect(() => {
+    const getData = async () => {
+      const result = await fetch('http://localhost:3000/fotos');
+      const data = await result.json();
+      setFotosGaleria([...data]);
+    }
 
-        setFotosGaleria(fotosGaleria.map(fotoGaleria => {
-          return {
-            ...fotoGaleria,
-            favorita: fotoGaleria.id === foto.id ? !foto.favorita : fotoGaleria.favorita
-          }
-        }))
+    setTimeout(() => getData(), 5000)
+
+  }, [])
+
+  const handleFavorite = (foto) => {
+    if (foto.id === fotoSeleccionada?.id) {
+      setFotoSeleccionada({
+        ...fotoSeleccionada,
+        favorita: !foto.favorita
+      })
+    }
+
+    setFotosGaleria(fotosGaleria.map(fotoGaleria => {
+      return {
+        ...fotoGaleria,
+        favorita: fotoGaleria.id === foto.id ? !foto.favorita : fotoGaleria.favorita
       }
-      
-    return (
-        <GlobalContext.Provider 
-        value={{
-            consulta, setConsulta, fotosGaleria, setFotosGaleria, fotoSeleccionada, setFotoSeleccionada,handleFavorite
-            }} 
-        >
-            {children}
-        </GlobalContext.Provider>
-    )
+    }))
+  }
+
+  const globalState = {
+    consulta,
+    setConsulta,
+    fotosGaleria,
+    setFotosGaleria,
+    fotoSeleccionada,
+    setFotoSeleccionada,
+    handleFavorite
+  }
+
+  return (
+    <GlobalContext.Provider value={globalState}>
+      {children}
+    </GlobalContext.Provider>
+  )
 }
 
 export default GlobalContextProvider
