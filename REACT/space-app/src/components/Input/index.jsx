@@ -1,5 +1,7 @@
 import styled from "styled-components"
 import search from '/imagenes/search.png'
+import { useContext, useRef } from "react"
+import { GlobalContext } from "../../context/GlobalContext"
 
 const ContainerEstilizado  = styled.div`
     position: relative;
@@ -18,7 +20,7 @@ const InputEstilizado = styled.input`
     font-size: 20px;
     line-height: 20px;
     outline: none;
-
+    color: white;
 `
 
 const IconoLupa = styled.img`
@@ -30,10 +32,24 @@ const IconoLupa = styled.img`
 `
 
 const Input = () => {
+
+  const cajaConsulta = useRef(null);
+  const {dispatch} = useContext(GlobalContext);
+
   return (
     <ContainerEstilizado>
-        <InputEstilizado type="text" placeholder="¿Qué estas buscando?" />
-        <IconoLupa src={search} alt="icono de busqueda" />
+        <InputEstilizado 
+          ref={cajaConsulta}
+          type="text" 
+          placeholder="¿Qué estas buscando?"  
+        />
+        <IconoLupa 
+          src={search} 
+          alt="icono de busqueda" 
+          onClick={ () => { 
+            //setConsulta(cajaConsulta.current.value) 
+            dispatch({type: 'SET_CONSULTA', payload: cajaConsulta.current.value})
+            }} />
     </ContainerEstilizado>
   )
 }

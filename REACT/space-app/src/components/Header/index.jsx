@@ -1,6 +1,8 @@
 import styled from "styled-components"
 import Input from "../Input"
 import logo from '/imagenes/logo.png'
+import { GlobalContext } from "../../context/GlobalContext"
+import { useContext } from "react"
 
 const HeaderEstilizado = styled.header`
     display: flex;
@@ -14,6 +16,7 @@ const Logo = styled.img`
 `
 
 const Header = () => {
+
   return (
      <HeaderEstilizado>
         <Logo src={logo} alt="logo de Space App" />
