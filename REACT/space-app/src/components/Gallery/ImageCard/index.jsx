@@ -5,6 +5,7 @@ import expandir from '../../../../public/iconos/expandir.png'
 import Button from "../../Button"
 import { useContext } from "react"
 import { GlobalContext } from "../../../context/GlobalContext"
+import useFotoModal from "../../../hooks/useFotoModal"
 
 const Contenedor = styled.figure`
   width: ${props => props.$expandida ? "100%" : '460px'};
@@ -60,6 +61,8 @@ const ImageCard = (props) => {
 
   const {dispatch} = useContext(GlobalContext)
 
+  const {abrirModal} = useFotoModal()
+
   return (
     <Contenedor $expandida = {expandida} >
       <img src={path} alt="" />
@@ -77,7 +80,7 @@ const ImageCard = (props) => {
 
             {
               !expandida && 
-              <Button onClick={() => /* Custom hook */} >
+              <Button onClick={() => abrirModal(props.foto)} >
                 <img src={expandir} />
               </Button>
             }
