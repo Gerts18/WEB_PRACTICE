@@ -3,6 +3,8 @@ import fav from '../../../../public/iconos/favorito.png'
 import favActivo from '../../../../public/iconos/favorito-activo.png'
 import expandir from '../../../../public/iconos/expandir.png'
 import Button from "../../Button"
+import { useContext } from "react"
+import { GlobalContext } from "../../../context/GlobalContext"
 
 const Contenedor = styled.figure`
   width: ${props => props.$expandida ? "100%" : '460px'};
@@ -50,11 +52,13 @@ const SubContenedor = styled.div`
 
 const ImageCard = (props) => {
 
-  const { titulo, fuente, path, id, tagId} = props.foto
+  const { titulo, fuente, path} = props.foto
 
-  const {solicitarZoom, expandida = false, marcarFavorito } = props
+  const {expandida = false} = props
 
   const iconoFavorito = props.foto.favorita ? favActivo : fav
+
+  const {dispatch} = useContext(GlobalContext)
 
   return (
     <Contenedor $expandida = {expandida} >
@@ -67,13 +71,13 @@ const ImageCard = (props) => {
           <h3>{fuente} </h3>
 
           <SubContenedor>
-            <Button onClick={() => marcarFavorito(props.foto)} >
+            <Button onClick={() => dispatch({type: 'ALTERNAR_FAVORITO', payload: foto})} >
               <img src={iconoFavorito} />
             </Button>
 
             {
               !expandida && 
-              <Button onClick={() => solicitarZoom(props.foto)} >
+              <Button onClick={() => dispatch({type: 'SET_FOTO_SELECCIONADA', payload: foto})} >
                 <img src={expandir} />
               </Button>
             }

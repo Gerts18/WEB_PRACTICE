@@ -17,12 +17,10 @@ const Logo = styled.img`
 
 const Header = () => {
 
-  const { setConsulta } = useContext(GlobalContext)
-
   return (
      <HeaderEstilizado>
         <Logo src={logo} alt="logo de Space App" />
-        <Input setConsulta={setConsulta} />
+        <Input/>
      </HeaderEstilizado>
   )
 }
