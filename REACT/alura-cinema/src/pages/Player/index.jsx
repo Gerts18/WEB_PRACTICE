@@ -3,6 +3,7 @@ import styles from './Player.module.css'
 import Titulo from 'components/Titulo'
 import { useParams } from 'react-router-dom'
 import videos from "data/db.json"
+import NotFound from 'pages/NotFound'
 
 const Player = () => {
 
@@ -10,6 +11,7 @@ const Player = () => {
 
     const video = videos.find(video => video.id === Number(parametros.id))
 
+    if(!video) return <NotFound/>
 
     return (
         <>
