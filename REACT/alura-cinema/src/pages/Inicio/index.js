@@ -3,7 +3,8 @@ import Cabecera from "components/Cabecera"
 import Card from "components/Card"
 import Pie from "components/Pie"
 import Titulo from "components/Titulo"
-
+import videos from "data/db.json"
+import styles from './Inicio.module.css'
 
 const Inicio = () => {
   return (
@@ -13,7 +14,15 @@ const Inicio = () => {
       <Titulo>
         <h1>Un lugar para guardar sus videos favoritos </h1>
       </Titulo>
-      <Card id={1} titulo={'Gato'} capa={'https://t2.ea.ltmcdn.com/es/posts/7/4/3/como_ayudar_a_un_gatito_a_defecar_20347_orig.jpg'} />
+        
+      <section className={styles.container}>
+        {
+          videos.map( (video) => {
+            return <Card {...video} key={video.id} />
+          } )
+        }
+      </section>
+
       <Pie />
     </>
   )
