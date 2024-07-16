@@ -3,6 +3,7 @@ import styles from './Player.module.css'
 import Titulo from 'components/Titulo'
 import { useParams } from 'react-router-dom'
 import NotFound from 'pages/NotFound'
+import { useEffect, useState } from 'react'
 
 const Player = () => {
 
@@ -13,7 +14,7 @@ const Player = () => {
     useEffect( () => {
         fetch(`https://my-json-server.typicode.com/Gerts18/api-videos/videos?id=${parametros.id}`)
         .then(response => response.json())
-        .then(data => setVideo(data))
+        .then(data => setVideo(...data))
     }, []);
 
     if(!video) return <NotFound/>
