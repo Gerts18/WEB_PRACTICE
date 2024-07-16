@@ -15,7 +15,7 @@ const Cabecera = () => {
           <CabeceraLink url='./' >
             Home
           </CabeceraLink>
-          <CabeceraLink url='./Favoritos' >
+          <CabeceraLink url='./favoritos' >
             Favoritos
           </CabeceraLink>
         </nav>
