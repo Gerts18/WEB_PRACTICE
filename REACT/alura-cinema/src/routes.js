@@ -4,6 +4,7 @@ import Cabecera from "components/Cabecera"
 import Pie from "components/Pie"
 import { BrowserRouter, Route, Routes } from "react-router-dom"
 import Container from "components/Container"
+import FavoritosProvider from "context/Favoritos"
 
 
 const AppRoutes = () => {
@@ -12,11 +13,13 @@ const AppRoutes = () => {
       <Cabecera />
 
       <Container>
-        
-        <Routes>
-          <Route path="/" element={<Inicio />} />
-          <Route path="/favoritos" element={<Favoritos />} />
-        </Routes>
+
+        <FavoritosProvider>
+          <Routes>
+            <Route path="/" element={<Inicio />} />
+            <Route path="/favoritos" element={<Favoritos />} />
+          </Routes>
+        </FavoritosProvider>
         
       </Container>
 
