@@ -1,8 +1,9 @@
+import Cabecera from "components/Cabecera"
 
 
 const Inicio = () => {
   return (
-    <h1>Hola mundo desde el Inicio</h1>
+    <Cabecera/>
   )
 }
 
