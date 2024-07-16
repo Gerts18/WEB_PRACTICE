@@ -1,0 +1,28 @@
+import Favoritos from "pages/Favoritos"
+import Inicio from "./pages/Inicio"
+import Cabecera from "components/Cabecera"
+import Pie from "components/Pie"
+import { BrowserRouter, Route, Routes } from "react-router-dom"
+import Container from "components/Container"
+
+
+const AppRoutes = () => {
+  return (
+    <BrowserRouter>
+      <Cabecera />
+
+      <Container>
+        
+        <Routes>
+          <Route path="/" element={<Inicio />} />
+          <Route path="/favoritos" element={<Favoritos />} />
+        </Routes>
+        
+      </Container>
+
+      <Pie />
+    </BrowserRouter>
+  )
+}
+
+export default AppRoutes
